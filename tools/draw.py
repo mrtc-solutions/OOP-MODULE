@@ -56,7 +56,7 @@ def chev(ax, x, y, w, h, fc, z=5, r=4):
 
 
 def t(ax, x, y, s, size=13, color=INK, fam=BODY, ha="center", va="center",
-      ls=1.3, z=10, style="normal", weight="normal"):
+      ls=1.3, z=10, style="normal", weight="normal", rotation=0):
     family, w, st = None, weight, style
     if isinstance(fam, (tuple, list)):
         family = fam[0]
@@ -67,7 +67,7 @@ def t(ax, x, y, s, size=13, color=INK, fam=BODY, ha="center", va="center",
     else:
         family = fam
     ax.text(x, y, s, fontsize=size, color=color, family=family, fontweight=w,
-            fontstyle=st, ha=ha, va=va, linespacing=ls, zorder=z)
+            fontstyle=st, ha=ha, va=va, linespacing=ls, zorder=z, rotation=rotation)
 
 
 def arrow(ax, x1, y1, x2, y2, color=MAROON, lw=2.2, ms=18, style="-|>", z=8):
