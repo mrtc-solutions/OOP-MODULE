@@ -102,6 +102,17 @@ def story():
             "understand, implement, test, maintain, modify, extend, reuse, debug and scale.</b>")]
 
     s.append(H1("9.  Design Goals"))
+    s += [P("A good object-oriented design should generally aim for eight goals:")]
+    s += BUL([
+        "<b>Correctness</b> — the design satisfies the requirements.",
+        "<b>Maintainability</b> — developers can modify it without destroying unrelated functionality.",
+        "<b>Reusability</b> — useful components can be reused elsewhere.",
+        "<b>Flexibility</b> — the system can adapt to changing requirements.",
+        "<b>Understandability</b> — developers can understand how it works.",
+        "<b>Testability</b> — individual parts can be tested effectively.",
+        "<b>Scalability</b> — the system can accommodate increased demand where required.",
+        "<b>Security</b> — security requirements are incorporated into the design.",
+    ])
     s += FIG("w10_design_goals.png", "Figure 5 — Eight design goals")
     s.append(H1("10.  Poor vs Good Design"))
     s += [P("A poor design puts everything — login, registration, fees, email, reports, database — into "
