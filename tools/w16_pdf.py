@@ -20,7 +20,7 @@ def story():
             "deliberately different: we are not introducing another isolated topic. Week 16 answers the "
             "most important question: <i>can the student take everything learned throughout the module "
             "and solve a new object-oriented analysis and design problem independently?</i>")]
-    s += FIG("w16_progression.png", "Figure 1 — Week 15 → Week 16")
+    s += FIG("w16_progression.png", "Figure 1 — Week 15 -> Week 16")
 
     # 2. learning outcomes -----------------------------------------------------
     s.append(H1("2.  Week 16 Learning Outcomes"))
@@ -39,9 +39,9 @@ def story():
     # 3. module in one picture -------------------------------------------------------
     s.append(H1("3.  The Entire Module in One Picture"))
     s += [P("Students should be able to reproduce this conceptual journey from memory: understand the "
-            "problem → business needs → requirements → use cases → identify objects/classes → object "
-            "model, dynamic model and behaviour model (classes, states, interactions) → analysis model "
-            "→ object-oriented design → architecture/components → implementation. <b>These are connected "
+            "problem -> business needs -> requirements -> use cases -> identify objects/classes -> object "
+            "model, dynamic model and behaviour model (classes, states, interactions) -> analysis model "
+            "-> object-oriented design -> architecture/components -> implementation. <b>These are connected "
             "stages and views, not unrelated examination topics.</b>")]
     s += FIG("w16_module_picture.png", "Figure 2 — The entire module in one picture")
 
@@ -143,7 +143,7 @@ def story():
             "<font name='Mono'>0..*</font> zero or many, <font name='Mono'>1..*</font> one or many — "
             "e.g. <font name='Mono'>Student 1 ─ 0..* Registration</font>."),
           P("<b>Aggregation</b> is a weaker whole-part relationship where parts can exist independently "
-            "(Department ◇— Lecturer); <b>composition</b> is stronger ownership/lifecycle (House ◆— "
+            "(Department o— Lecturer); <b>composition</b> is stronger ownership/lifecycle (House *— "
             "Room). <b>Generalisation</b> is an “is-a” relationship (Car and Motorcycle are Vehicles). "
             "Choose the diamond from the ownership/lifecycle relationship, not because “the diamond "
             "looks nice.”")]
@@ -156,17 +156,17 @@ def story():
     s += [P("Dynamic modelling describes how the system changes over time — <i>“what happens?”</i> "
             "rather than <i>“what exists?”</i>. An <b>event</b> causes a change (Course Registration "
             "Opens); a <b>state</b> is a condition at a point (Open, Closed, Full); a <b>transition</b> "
-            "is movement between states (Available → Full when the final seat is taken). The Course "
-            "lifecycle: Created → Available → Full → Closed.")]
+            "is movement between states (Available -> Full when the final seat is taken). The Course "
+            "lifecycle: Created -> Available -> Full -> Closed.")]
     s += FIG("w16_state_diagram.png", "Figure 11 — State diagram: Course lifecycle")
 
     # PART H — behavioural modelling -------------------------------------------------------
     s.append(H1("PART H — BEHAVIOURAL MODELLING REVISION"))
     s.append(H1("13.  Activity, Sequence and Communication Diagrams"))
-    s += [P("An <b>activity diagram</b> models a workflow (Start → Login → Select Course → Check "
-            "Eligibility → Check Capacity → Register → End). A <b>sequence diagram</b> focuses on "
-            "<i>who communicates with whom and in what order</i> (Student → RegistrationController → "
-            "RegistrationService → StudentRecord → Registration). A <b>communication/collaboration "
+    s += [P("An <b>activity diagram</b> models a workflow (Start -> Login -> Select Course -> Check "
+            "Eligibility -> Check Capacity -> Register -> End). A <b>sequence diagram</b> focuses on "
+            "<i>who communicates with whom and in what order</i> (Student -> RegistrationController -> "
+            "RegistrationService -> StudentRecord -> Registration). A <b>communication/collaboration "
             "diagram</b> also models interactions but emphasises objects, relationships and message "
             "numbering (1: register(), 2: validate(), 3: save()).")]
     s += FIG("w16_sequence_vs_activity.png", "Figure 12 — Sequence diagram vs activity diagram")
@@ -181,11 +181,11 @@ def story():
     s.append(H1("PART I — FULL MODEL INTEGRATION"))
     s.append(H1("14.  The Most Important Week 16 Concept"))
     s += [P("Follow one requirement through the chain: <b>Requirement</b> (“students must be able to "
-            "register for courses”) → <b>Use Case</b> (Register Course) → <b>Classes</b> (Student, "
-            "Course, Registration, RegistrationService) → <b>Sequence</b> (Student → "
-            "RegistrationService → Course → Registration) → <b>State</b> (Course: Available → Full) → "
-            "<b>Activity</b> (Select Course → Check Eligibility → Check Capacity → Register) → "
-            "<b>Design</b> (Presentation → Application → Domain → Persistence). That is integrated "
+            "register for courses”) -> <b>Use Case</b> (Register Course) -> <b>Classes</b> (Student, "
+            "Course, Registration, RegistrationService) -> <b>Sequence</b> (Student -> "
+            "RegistrationService -> Course -> Registration) -> <b>State</b> (Course: Available -> Full) -> "
+            "<b>Activity</b> (Select Course -> Check Eligibility -> Check Capacity -> Register) -> "
+            "<b>Design</b> (Presentation -> Application -> Domain -> Persistence). That is integrated "
             "OOAD.")]
     s += FIG("w16_integration_chain.png", "Figure 13 — Full model integration")
 
@@ -195,8 +195,8 @@ def story():
     s += [P("If the class diagram says <font name='Mono'>Course.checkCapacity()</font> but the sequence "
             "diagram says <font name='Mono'>Course.checkAvailableSeats()</font>, ask: <i>are these the "
             "same operation?</i> If not, the model may be inconsistent. Perform the six checks: "
-            "(1) use cases ↔ requirements; (2) use cases ↔ classes; (3) sequence ↔ class; "
-            "(4) activity ↔ sequence; (5) state ↔ behaviour; (6) design ↔ requirements.")]
+            "(1) use cases <- requirements; (2) use cases <- classes; (3) sequence <- class; "
+            "(4) activity <- sequence; (5) state <- behaviour; (6) design <- requirements.")]
     s += FIG("w16_consistency.png", "Figure 14 — Six model-consistency checks")
 
     # PART K — USDP -------------------------------------------------------
@@ -218,10 +218,10 @@ def story():
     s.append(H1("PART L — ITERATIVE DEVELOPMENT"))
     s.append(H1("17.  What Is an Iteration?"))
     s += [P("An <b>iteration</b> is a development cycle during which a team produces and evaluates part "
-            "of the system. Instead of “plan everything → build everything → test everything”, an "
-            "iterative approach cycles through: Iteration 1 (requirements + basic design) → feedback → "
-            "Iteration 2 (more functionality) → feedback → Iteration 3 (more functionality) → feedback "
-            "→ Iteration 4 (refinement + testing). Iterations are planned, measured intervals within "
+            "of the system. Instead of “plan everything -> build everything -> test everything”, an "
+            "iterative approach cycles through: Iteration 1 (requirements + basic design) -> feedback -> "
+            "Iteration 2 (more functionality) -> feedback -> Iteration 3 (more functionality) -> feedback "
+            "-> Iteration 4 (refinement + testing). Iterations are planned, measured intervals within "
             "phases that deliver incremental value to stakeholders.")]
     s += FIG("w16_iterative.png", "Figure 16 — Iterative development")
 
@@ -231,8 +231,8 @@ def story():
     s += [P("<b>Software reuse</b> means using an existing component, class, library, framework, "
             "service, design or architecture rather than developing everything from scratch — an "
             "authentication library instead of a bespoke mechanism, or a UI framework instead of "
-            "building every control. The goal: reuse → less duplication → less effort → potentially "
-            "improved consistency → easier maintenance. However, reuse should be based on suitability, "
+            "building every control. The goal: reuse -> less duplication -> less effort -> potentially "
+            "improved consistency -> easier maintenance. However, reuse should be based on suitability, "
             "security, maintainability, compatibility and licensing — not simply because something "
             "already exists.")]
 
@@ -248,9 +248,9 @@ def story():
             "Deposit, Withdrawal, Transfer, Notification — plus services AuthenticationService, "
             "TransactionService, NotificationService. <b>Relationships:</b> User generalises Customer / "
             "Agent / Administrator; <font name='Mono'>Customer 1 ─ 1 Wallet</font>; "
-            "<font name='Mono'>Wallet 1 ─ 0..* Transaction</font>. <b>Send Money:</b> sendMoney() → "
-            "validateSender() → checkBalance() → creditReceiver() → createTransaction() → "
-            "sendNotification(). <b>Transaction states:</b> Created → Pending → Completed (or Failed).")]
+            "<font name='Mono'>Wallet 1 ─ 0..* Transaction</font>. <b>Send Money:</b> sendMoney() -> "
+            "validateSender() -> checkBalance() -> creditReceiver() -> createTransaction() -> "
+            "sendNotification(). <b>Transaction states:</b> Created -> Pending -> Completed (or Failed).")]
     s += FIG("w16_mobile_money.png", "Figure 17 — Mobile money case study")
 
     # PART O — practical -------------------------------------------------------
@@ -343,7 +343,7 @@ def story():
     s += [P("<b>Tutorial:</b> an Online Examination Management System — identify actors; at least 10 use "
             "cases; at least 10 candidate classes; the use-case diagram; the class diagram; a sequence "
             "diagram for Start Examination; an activity diagram for Taking an Examination; a state "
-            "diagram for Examination (Created → Scheduled → Open → In Progress → Submitted → Marked → "
+            "diagram for Examination (Created -> Scheduled -> Open -> In Progress -> Submitted -> Marked -> "
             "Released); identify components; explain how the diagrams relate."),
           P("<b>Practical mini-project:</b> choose a Hospital, Banking, Mobile Money, University "
             "Registration, Library, Hotel, E-commerce or Transport system, and submit: problem "
@@ -361,8 +361,8 @@ def story():
     # PART X — exam strategy -------------------------------------------------------
     s.append(H1("26.  Exam Answering Strategy"))
     s += [P("For <b>definition</b> questions, do not write only “encapsulation is hiding data” — write "
-            "the full definition, then give an example. For <b>explain</b> questions, use Definition → "
-            "Explanation → Example → Importance. For <b>compare</b> questions, use a table (e.g. class "
+            "the full definition, then give an example. For <b>explain</b> questions, use Definition -> "
+            "Explanation -> Example -> Importance. For <b>compare</b> questions, use a table (e.g. class "
             "vs object: meaning, memory, example, quantity). For <b>UML</b> questions, always identify "
             "the requirement, actors, use cases, classes, relationships, behaviour — then check "
             "consistency. <b>Do not randomly draw diagrams.</b>")]
@@ -372,9 +372,9 @@ def story():
     s.append(CALLOUT("THE ENTIRE MODULE IN ONE QUESTION",
         ["How can we systematically understand a software problem and represent a solution using "
          "objects, classes, UML models and an appropriate development process? The answer: "
-         "<b>Business Problem → Requirements → Actors → Use Cases → Objects/Classes → Class Model → "
-         "Dynamic/State Model → Behavioural/Interaction → Analysis → Design → Architecture/Components → "
-         "Model Integration → Implementation.</b> OOAD is not simply about drawing UML diagrams — it is "
+         "<b>Business Problem -> Requirements -> Actors -> Use Cases -> Objects/Classes -> Class Model -> "
+         "Dynamic/State Model -> Behavioural/Interaction -> Analysis -> Design -> Architecture/Components -> "
+         "Model Integration -> Implementation.</b> OOAD is not simply about drawing UML diagrams — it is "
          "about thinking systematically, identifying what matters, understanding interactions and "
          "behaviour, and transforming that understanding into a coherent design developers can "
          "implement."]))
@@ -419,8 +419,8 @@ def story():
             "Weeks 13–14 moved from analysis into design and model integration; Week 15 applied "
             "everything through a complete case study. Now, in Week 16, <b>the student becomes the "
             "analyst/designer</b> — capable of being told “here is a real-world problem” and "
-            "independently producing Requirements → Actors → Use Cases → Classes → Relationships → "
-            "Interactions → Behaviour → Architecture → Components → an Integrated UML Model. That is "
+            "independently producing Requirements -> Actors -> Use Cases -> Classes -> Relationships -> "
+            "Interactions -> Behaviour -> Architecture -> Components -> an Integrated UML Model. That is "
             "the intended culmination of BICT 3202 Object-Oriented Analysis and Design.")]
 
     return s

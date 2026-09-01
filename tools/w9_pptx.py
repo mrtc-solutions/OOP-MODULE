@@ -99,7 +99,7 @@ def slides(d):
 
     # 13. phases
     s = d.slide()
-    d.header(s, "The Four UP Phases", "Inception → Elaboration → Construction → Transition")
+    d.header(s, "The Four UP Phases", "Inception -> Elaboration -> Construction -> Transition")
     d.pic(s, "w9_phases.png", y=1.6, w=10.6)
     d.takeaway(s, "A phase is NOT a waterfall stage — each phase contains iterations.")
 

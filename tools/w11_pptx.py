@@ -27,13 +27,13 @@ def slides(d):
 
     # 3. progression
     s = d.slide()
-    d.header(s, "Week 10 → 11 → 12", "What is design? → refine it → integrate it")
+    d.header(s, "Week 10 -> 11 -> 12", "What is design? -> refine it -> integrate it")
     d.pic(s, "w11_progression.png", y=1.6, w=10.6)
     d.takeaway(s, "Week 11 turns the Week 10 models into an implementable design.")
 
     # 4. refinement
     s = d.slide()
-    d.header(s, "Design Refinement", "General → detailed and precise")
+    d.header(s, "Design Refinement", "General -> detailed and precise")
     d.pic(s, "w11_refinement.png", y=1.6, w=10.6)
     d.takeaway(s, "The design model becomes increasingly precise toward implementation.")
 
@@ -47,7 +47,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Entity, Boundary & Control Classes", "Three roles for thinking about classes")
     d.pic(s, "w11_entity_boundary_control.png", y=1.6, w=10.6)
-    d.takeaway(s, "Student → RegistrationPage → RegistrationController → Registration → Course.")
+    d.takeaway(s, "Student -> RegistrationPage -> RegistrationController -> Registration -> Course.")
 
     # 7. attributes
     s = d.slide()
@@ -128,7 +128,7 @@ def slides(d):
         ("Start: ", "\u201cStudents only use email.\u201d"),
         ("Then: ", "\u201cAdd SMS.\u201d — later, \u201cAdd WhatsApp.\u201d"),
         ("Poor design: ", "every new method changes the Student class."),
-        ("Better: ", "NotificationService behind a Notification interface → Email, SMS, WhatsApp."),
+        ("Better: ", "NotificationService behind a Notification interface -> Email, SMS, WhatsApp."),
         ("Result: ", "the architecture stays adaptable."),
     ], size=16, gap=13)
     d.takeaway(s, "Design for reasonable future change without trying to predict everything.")
@@ -157,7 +157,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Integrated Case Study", "Seven steps to a complete design")
     d.pic(s, "w11_case_study.png", y=1.5, w=10.6)
-    d.takeaway(s, "Use case → classes → class design → service → sequence → state → architecture.")
+    d.takeaway(s, "Use case -> classes -> class design -> service -> sequence -> state -> architecture.")
 
     # 23. mistakes
     s = d.slide()

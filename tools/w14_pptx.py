@@ -27,7 +27,7 @@ def slides(d):
 
     # 3. progression
     s = d.slide()
-    d.header(s, "Week 13 → Week 14", "From architecture to the contents of the components")
+    d.header(s, "Week 13 -> Week 14", "From architecture to the contents of the components")
     d.pic(s, "w14_progression.png", y=1.6, w=10.6)
     d.takeaway(s, "Week 14 combines all the models into one coherent software design.")
 
@@ -39,9 +39,9 @@ def slides(d):
 
     # 5. transformation
     s = d.slide()
-    d.header(s, "Analysis Model → Design Model", "Design classes must be justified")
+    d.header(s, "Analysis Model -> Design Model", "Design classes must be justified")
     d.pic(s, "w14_transformation.png", y=1.5, w=10.4)
-    d.takeaway(s, "Requirements → use cases → analysis → design decisions → design → implementation.")
+    d.takeaway(s, "Requirements -> use cases -> analysis -> design decisions -> design -> implementation.")
 
     # 6. three models
     s = d.slide()
@@ -69,7 +69,7 @@ def slides(d):
 
     # 10. design class
     s = d.slide()
-    d.header(s, "Analysis Class → Design Class", "Precise attributes, types, visibility, operations")
+    d.header(s, "Analysis Class -> Design Class", "Precise attributes, types, visibility, operations")
     d.pic(s, "w14_design_class.png", y=1.6, w=10.6)
     d.takeaway(s, "The design class is much more precise.")
 
@@ -91,9 +91,9 @@ def slides(d):
 
     # 13. sequence -> class
     s = d.slide()
-    d.header(s, "Sequence Diagram → Class Design", "Messages reveal operations")
+    d.header(s, "Sequence Diagram -> Class Design", "Messages reveal operations")
     d.pic(s, "w14_sequence_to_class.png", y=1.6, w=10.6)
-    d.takeaway(s, "Course → checkCapacity() means Course needs checkCapacity().")
+    d.takeaway(s, "Course -> checkCapacity() means Course needs checkCapacity().")
 
     # 14. consistency
     s = d.slide()
@@ -105,7 +105,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Object Model + Dynamic Model", "Operations relate to state changes")
     d.pic(s, "w14_object_dynamic.png", y=1.6, w=10.6)
-    d.takeaway(s, "registerStudent() causes Available → Full at the final seat.")
+    d.takeaway(s, "registerStudent() causes Available -> Full at the final seat.")
 
     # 16. activity mapping
     s = d.slide()
@@ -129,7 +129,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Designing for Change", "Boundaries around what is likely to change")
     d.pic(s, "w14_design_change.png", y=1.6, w=10.6)
-    d.takeaway(s, "RegistrationService → PaymentGateway, not → AirtelMoneyAPI.")
+    d.takeaway(s, "RegistrationService -> PaymentGateway, not -> AirtelMoneyAPI.")
 
     # 20. strategy pattern
     s = d.slide()
@@ -139,7 +139,7 @@ def slides(d):
 
     # 21. integrated design
     s = d.slide()
-    d.header(s, "The Integrated Design Model", "Controller → Service → Domain → Repository")
+    d.header(s, "The Integrated Design Model", "Controller -> Service -> Domain -> Repository")
     d.pic(s, "w14_integrated_design.png", y=1.5, w=10.4)
     d.takeaway(s, "That is what it means to integrate the models.")
 
@@ -171,8 +171,8 @@ def slides(d):
     s = d.slide()
     d.header(s, "Week 14 Summary", "The most important concept")
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
-        ("1. ", "Requirement → use case → scenario → sequence → classes → responsibilities → design → implementation."),
-        ("2. ", "Class model ↔ dynamic model ↔ behavioural model."),
+        ("1. ", "Requirement -> use case -> scenario -> sequence -> classes -> responsibilities -> design -> implementation."),
+        ("2. ", "Class model <- dynamic model <- behavioural model."),
         ("3. ", "The models must support one another, not contradict one another."),
     ], size=17, gap=14)
     d.takeaway(s, "That is the central lesson of Week 14.")

@@ -41,7 +41,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Basic Multilayer Architecture", "Five logical levels")
     d.pic(s, "w13_layers.png", y=1.5, w=10.4)
-    d.takeaway(s, "Presentation → Application → Domain → Data Access → Database.")
+    d.takeaway(s, "Presentation -> Application -> Domain -> Data Access -> Database.")
 
     # 6. presentation layer
     s = d.slide()
@@ -57,7 +57,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "The Domain Layer", "Business rules in one place")
     d.pic(s, "w13_domain_rules.png", y=1.6, w=10.6)
-    d.takeaway(s, "max 6 → max 8 courses: centralised = one change; duplicated = four changes.")
+    d.takeaway(s, "max 6 -> max 8 courses: centralised = one change; duplicated = four changes.")
 
     # 8. data access
     s = d.slide()
@@ -134,7 +134,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Dependency Direction", "Control the direction of dependencies")
     d.pic(s, "w13_dependency_direction.png", y=1.6, w=10.6)
-    d.takeaway(s, "Presentation → Application → Domain → Infrastructure — not everything ↔ everything.")
+    d.takeaway(s, "Presentation -> Application -> Domain -> Infrastructure — not everything <- everything.")
 
     # 20. benefits
     s = d.slide()

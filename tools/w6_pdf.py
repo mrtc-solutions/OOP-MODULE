@@ -129,8 +129,8 @@ def story():
     s += [P("Inheritance should generally make sense as an <b>is-a</b> relationship: a Dog is an Animal "
             "(good), a Car is a Vehicle (good), but a Car is an Engine (no) and a Student is a Course "
             "(no). This is one of the most common examination questions: <b>inheritance represents "
-            "IS-A</b> (Car ─────▷ Vehicle), while <b>aggregation represents HAS-A / PART-OF</b> "
-            "(Car ◇──── Engine).")]
+            "IS-A</b> (Car --|> Vehicle), while <b>aggregation represents HAS-A / PART-OF</b> "
+            "(Car o-- Engine).")]
     s += FIG("w6_animal.png", "Figure 10 — An animal hierarchy with specialised behaviour")
     s += FIG("w6_isa_hasa.png", "Figure 11 — IS-A (inheritance) vs HAS-A (aggregation)")
 
@@ -185,7 +185,7 @@ def story():
     # ============ COMPLETE EXAMPLES ============
     s.append(H1("16.  Complete Example — Online Shopping"))
     s += [P("All four concepts come together in an online shopping system. "
-            "<b>Composition:</b> Order ◆──── OrderItem — an OrderItem is strongly associated with a "
+            "<b>Composition:</b> Order *-- OrderItem — an OrderItem is strongly associated with a "
             "particular Order. <b>Inheritance:</b> Payment is generalized into CardPayment, MobileMoney "
             "and BankTransfer. <b>Polymorphism:</b> all payment types support processPayment() but each "
             "performs it differently. <b>Grouping:</b> the system is organized into Customer Management, "
@@ -193,7 +193,7 @@ def story():
     s += FIG("w6_online_shopping.png", "Figure 16 — The four concepts in one model")
 
     s.append(H1("17.  Complete Example — University System"))
-    s += [P("Build a larger model: User ▷ Student and User ▷ Lecturer (inheritance); "
+    s += [P("Build a larger model: User --|> Student and User --|> Lecturer (inheritance); "
             "<font name='Mono'>Department ◇──── Lecturer</font> (aggregation); "
             "<font name='Mono'>Student ─── Registration ─── Course</font> (association); "
             "<font name='Mono'>Course ◆──── CourseMaterial</font> (composition, if materials are strongly "
@@ -205,7 +205,7 @@ def story():
     s.append(H1("18.  Practical Lab and Validation"))
     s += [P("Using a CASE tool, model aggregation and inheritance: draw "
             "<font name='Mono'>University ◇──── Department</font>, "
-            "<font name='Mono'>Order ◆──── OrderLine</font>, and the User → Student/Lecturer hierarchy, "
+            "<font name='Mono'>Order ◆──── OrderLine</font>, and the User -> Student/Lecturer hierarchy, "
             "then add a polymorphic operation (e.g. calculateMark()). After modelling, evaluate each "
             "decision: is the relationship genuinely whole-part? Is the generalization a genuine is-a? Is "
             "polymorphism justified, or would ordinary classes do?")]

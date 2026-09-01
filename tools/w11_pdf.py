@@ -25,7 +25,7 @@ def story():
             "responsibilities, design relationships, choose association vs inheritance, work with "
             "interfaces and abstract classes, manage dependencies, and judge the quality of the "
             "resulting design.")]
-    s += FIG("w11_progression.png", "Figure 1 — Week 10 → 11 → 12 progression")
+    s += FIG("w11_progression.png", "Figure 1 — Week 10 -> 11 -> 12 progression")
 
     # 2. learning outcomes -----------------------------------------------------
     s.append(H1("2.  Learning Outcomes"))
@@ -52,7 +52,7 @@ def story():
             "identify <b>Student, Course, Registration</b>; we then refine them into classes with typed "
             "attributes and operations. The design model becomes increasingly precise as it moves toward "
             "implementation.")]
-    s += FIG("w11_refinement.png", "Figure 2 — Refinement: general → detailed")
+    s += FIG("w11_refinement.png", "Figure 2 — Refinement: general -> detailed")
 
     s.append(H1("4.  Analysis Class vs Design Class"))
     s += [P("An <b>analysis class</b> represents an important concept in the problem domain (Student, "
@@ -80,8 +80,8 @@ def story():
             "Course, Registration, Payment, Invoice). <b>Boundary classes</b> handle interaction between "
             "the system and external actors (LoginPage, RegistrationForm, StudentDashboard, "
             "PaymentScreen). <b>Control classes</b> coordinate activities or use-case logic "
-            "(RegistrationController, PaymentController, LoginController) — so we may have Student → "
-            "RegistrationPage → RegistrationController → Registration → Course.")]
+            "(RegistrationController, PaymentController, LoginController) — so we may have Student -> "
+            "RegistrationPage -> RegistrationController -> Registration -> Course.")]
     s += FIG("w11_entity_boundary_control.png", "Figure 4 — Entity, boundary and control classes")
 
     # PART C/D — attributes and operations --------------------------------------
@@ -128,7 +128,7 @@ def story():
 
     s.append(H1("11.  Coupling"))
     s += [P("<b>Coupling</b> describes the degree of dependency between components. High coupling — "
-            "Student → Payment → Database → Email → SMS → Reports — means changing the database affects "
+            "Student -> Payment -> Database -> Email -> SMS -> Reports — means changing the database affects "
             "everything. Lower coupling uses an abstraction: "
             "<font name='Mono'>PaymentService</font> depends on a <font name='Mono'>PaymentGateway</font> "
             "interface implemented by Bank and MobileMoney, so the service need not know every "
@@ -233,11 +233,11 @@ def story():
             "AuthenticationService, CourseRepository, RegistrationRepository. <b>(3) Class design</b> — "
             "typed attributes and operations for Student, Course and Registration. <b>(4) Service</b> — "
             "RegistrationService coordinates across Student, Course and Registration. <b>(5) Sequence</b> — "
-            "Student → RegistrationService <font name='Mono'>register()</font> → Course "
-            "<font name='Mono'>hasSpace()</font> / <font name='Mono'>checkPrerequisite()</font> → "
-            "Registration created → confirmation. <b>(6) State model</b> — Requested → Validated → "
-            "Confirmed (or Rejected). <b>(7) Architecture</b> — Interface → Services → Domain → "
-            "Repositories → Database.")]
+            "Student -> RegistrationService <font name='Mono'>register()</font> -> Course "
+            "<font name='Mono'>hasSpace()</font> / <font name='Mono'>checkPrerequisite()</font> -> "
+            "Registration created -> confirmation. <b>(6) State model</b> — Requested -> Validated -> "
+            "Confirmed (or Rejected). <b>(7) Architecture</b> — Interface -> Services -> Domain -> "
+            "Repositories -> Database.")]
     s += FIG("w11_case_study.png", "Figure 18 — The integrated case study")
 
     # PART V — mistakes -------------------------------------------------------------------
@@ -287,9 +287,9 @@ def story():
     s.append(CALLOUT("THE MOST IMPORTANT IDEA OF WEEK 11",
         ["Drawing a UML class diagram is <b>not</b> the same as completing an OO design. The goal is "
          "not simply to create more diagrams — it is to create a design that is <b>correct, "
-         "understandable, maintainable, testable, reusable and adaptable</b>. Path: requirement → "
-         "analysis (Student, Course…) → refinement (attributes + operations) → responsibilities → "
-         "interfaces + dependencies → cohesion + coupling decisions → architecture → implementable "
+         "understandable, maintainable, testable, reusable and adaptable</b>. Path: requirement -> "
+         "analysis (Student, Course…) -> refinement (attributes + operations) -> responsibilities -> "
+         "interfaces + dependencies -> cohesion + coupling decisions -> architecture -> implementable "
          "design."]))
 
     # exam ---------------------------------------------------------------------------------------

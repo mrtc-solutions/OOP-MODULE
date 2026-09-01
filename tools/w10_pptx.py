@@ -137,7 +137,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Separation of Concerns", "Different concerns handled by the appropriate part")
     d.pic(s, "w10_separation.png", y=1.6, w=10.6)
-    d.takeaway(s, "Presentation → Business Logic → Data Access → Database.")
+    d.takeaway(s, "Presentation -> Business Logic -> Data Access -> Database.")
 
     # 19. architecture
     s = d.slide()
@@ -147,9 +147,9 @@ def slides(d):
 
     # 20. refinement
     s = d.slide()
-    d.header(s, "Refinement", "Progressively add detail: analysis → design → code")
+    d.header(s, "Refinement", "Progressively add detail: analysis -> design -> code")
     d.pic(s, "w10_refinement.png", y=1.6, w=10.6)
-    d.takeaway(s, "Problem → analysis model → design model → implementation → running software.")
+    d.takeaway(s, "Problem -> analysis model -> design model -> implementation -> running software.")
 
     # 21. three models
     s = d.slide()
@@ -161,15 +161,15 @@ def slides(d):
     s = d.slide()
     d.header(s, "Combining the Models", "Case study: online course registration")
     d.pic(s, "w10_integration.png", y=1.6, w=10.6)
-    d.takeaway(s, "Requirement → use case → objects → models → sequence → design.")
+    d.takeaway(s, "Requirement -> use case -> objects -> models -> sequence -> design.")
 
     # 23. consistency + traceability
     s = d.slide()
     d.header(s, "Model Consistency & Traceability", "The models must agree — and be followable")
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
         ("Consistency: ", "if the sequence diagram calls Course.checkPrerequisite(), the class model must define it."),
-        ("Consistency: ", "if the use case actor is Student, the sequence must not show Lecturer → registerCourse()."),
-        ("Traceability: ", "requirement → use case → activity → sequence → class → code → test."),
+        ("Consistency: ", "if the use case actor is Student, the sequence must not show Lecturer -> registerCourse()."),
+        ("Traceability: ", "requirement -> use case -> activity -> sequence -> class -> code -> test."),
     ], size=16, gap=13)
     d.pic(s, "w10_traceability.png", y=5.6, w=10.6)
     d.takeaway(s, "Traceability shows which models and code a change might affect.")
@@ -181,7 +181,7 @@ def slides(d):
         ("Sequence diagrams ", "show the order of interactions between objects."),
         ("Design classes ", "add visibility, attribute types, parameter and return types, operations."),
         ("Interfaces ", "define a contract — <<interface>> PaymentProcessor.processPayment()."),
-        ("BankPayment and MobileMoneyPayment ", "can both implement the same interface → lower coupling."),
+        ("BankPayment and MobileMoneyPayment ", "can both implement the same interface -> lower coupling."),
     ], size=16, gap=13)
     d.takeaway(s, "Interfaces let the application depend on the abstraction, not a concrete class.")
 
@@ -198,7 +198,7 @@ def slides(d):
 
     # 26. master diagram
     s = d.slide()
-    d.header(s, "Week 10 Master Diagram", "Requirements → models → design → code")
+    d.header(s, "Week 10 Master Diagram", "Requirements -> models -> design -> code")
     d.pic(s, "w10_master.png", y=1.6, w=10.4)
     d.takeaway(s, "That is the central lesson of Week 10.")
 

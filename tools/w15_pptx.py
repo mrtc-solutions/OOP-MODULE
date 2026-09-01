@@ -27,7 +27,7 @@ def slides(d):
 
     # 3. progression
     s = d.slide()
-    d.header(s, "Week 14 → Week 15", "From understanding to a complete application")
+    d.header(s, "Week 14 -> Week 15", "From understanding to a complete application")
     d.pic(s, "w15_progression.png", y=1.6, w=10.6)
     d.takeaway(s, "Week 15 applies Weeks 1–14 to one complete system.")
 
@@ -81,7 +81,7 @@ def slides(d):
 
     # 12. class model
     s = d.slide()
-    d.header(s, "The Class Model", "Controller → Service → Domain → Repository")
+    d.header(s, "The Class Model", "Controller -> Service -> Domain -> Repository")
     d.pic(s, "w15_class_model.png", y=1.5, w=10.3)
     d.takeaway(s, "From “register a course” to an implementation-ready design.")
 
@@ -117,7 +117,7 @@ def slides(d):
 
     # 18. components
     s = d.slide()
-    d.header(s, "Components & Layers", "Presentation → Application → Domain → Persistence")
+    d.header(s, "Components & Layers", "Presentation -> Application -> Domain -> Persistence")
     d.pic(s, "w15_components.png", y=1.5, w=10.4)
     d.takeaway(s, "Connects directly with the architecture covered earlier.")
 
@@ -131,12 +131,12 @@ def slides(d):
     s = d.slide()
     d.header(s, "The Model Audit", "Six consistency checks")
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
-        ("Use Case ↔ Class: ", "does every use case have supporting classes?"),
-        ("Class ↔ Sequence: ", "does every message match an operation?"),
-        ("Sequence ↔ State: ", "do messages cause the right transitions?"),
-        ("Activity ↔ Sequence: ", "does the workflow match the interaction?"),
-        ("Class ↔ Component: ", "are classes sensibly allocated?"),
-        ("Requirements ↔ Design: ", "can each requirement be traced in?"),
+        ("Use Case <- Class: ", "does every use case have supporting classes?"),
+        ("Class <- Sequence: ", "does every message match an operation?"),
+        ("Sequence <- State: ", "do messages cause the right transitions?"),
+        ("Activity <- Sequence: ", "does the workflow match the interaction?"),
+        ("Class <- Component: ", "are classes sensibly allocated?"),
+        ("Requirements <- Design: ", "can each requirement be traced in?"),
     ], size=16, gap=13)
     d.takeaway(s, "“Check payment” with no payment class = something is missing.")
 
@@ -169,13 +169,13 @@ def slides(d):
         ("Copying diagrams ", "— the model must represent YOUR system."),
         ("Inconsistent naming ", "— Registration vs Enrollment vs CourseSignup."),
     ], size=15, gap=12)
-    d.takeaway(s, "Understand Problem → Model → Design, then use the tool.")
+    d.takeaway(s, "Understand Problem -> Model -> Design, then use the tool.")
 
     # 24. integrated model
     s = d.slide()
     d.header(s, "The Complete OOAD Journey", "The big picture")
     d.pic(s, "w15_integrated.png", y=1.6, w=10.6)
-    d.takeaway(s, "Actors → Use cases → Analysis → Class/Dynamic/Behaviour → Design → Implementation.")
+    d.takeaway(s, "Actors -> Use cases -> Analysis -> Class/Dynamic/Behaviour -> Design -> Implementation.")
 
     # 25. summary
     s = d.slide()
@@ -183,7 +183,7 @@ def slides(d):
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
         ("1. ", "OOAD is not about drawing many diagrams — it is about a coherent model."),
         ("2. ", "Requirements, use cases, classes, interactions, behaviour and design support one another."),
-        ("3. ", "Requirement → Use Case → Class → Interaction → Behaviour → Design → Components → Documentation."),
+        ("3. ", "Requirement -> Use Case -> Class -> Interaction -> Behaviour -> Design -> Components -> Documentation."),
     ], size=16, gap=14)
     d.takeaway(s, "That is exactly what Week 15 is designed to test.")
 

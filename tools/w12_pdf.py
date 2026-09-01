@@ -25,7 +25,7 @@ def story():
             "different perspectives</b>. UML is specifically intended for visualising, specifying and "
             "documenting software and systems, and the current formal UML specification listed by OMG is "
             "UML 2.5.1.")]
-    s += FIG("w12_progression.png", "Figure 1 — Week 11 → 12 → 13 progression")
+    s += FIG("w12_progression.png", "Figure 1 — Week 11 -> 12 -> 13 progression")
 
     # 2. learning outcomes -----------------------------------------------------
     s.append(H1("2.  Learning Outcomes"))
@@ -61,8 +61,8 @@ def story():
     s += FIG("w12_model_views.png", "Figure 3 — Different models, different questions")
 
     s.append(H1("5.  The Big Picture"))
-    s += [P("Requirements → use-case model → (Object model / Dynamic model / Behavioural model) → class "
-            "diagram, state model, sequence/activity model → integrated design → implementation. This is "
+    s += [P("Requirements -> use-case model -> (Object model / Dynamic model / Behavioural model) -> class "
+            "diagram, state model, sequence/activity model -> integrated design -> implementation. This is "
             "the central idea of Week 12.")]
     s += FIG("w12_big_picture.png", "Figure 4 — The big picture")
 
@@ -70,7 +70,7 @@ def story():
     s.append(H1("PART B — WHY DO MODELS NEED TO AGREE?"))
     s.append(H1("6.  Model Consistency"))
     s += [P("Suppose the requirement says <i>“A student can register for a course.”</i> The use-case "
-            "diagram contains <b>Student → Register for Course</b> — good. But the class diagram contains "
+            "diagram contains <b>Student -> Register for Course</b> — good. But the class diagram contains "
             "only <b>Student, Teacher, Department</b>, with no <b>Course</b> or <b>Registration</b>. The "
             "use-case model says the system must support course registration, but the class model lacks "
             "the objects needed to support it — <b>the models are inconsistent or incomplete</b>. This is "
@@ -89,14 +89,14 @@ def story():
             "Registered Courses. <b>Step 3 — classes:</b> domain classes Student, Course, Registration; "
             "service classes AuthenticationService, RegistrationService, CourseRepository, "
             "RegistrationRepository. <b>Step 4 — initial class model:</b> Student (studentId, name, "
-            "email) — registers → Registration (registrationId, date, status) — for → Course "
+            "email) — registers -> Registration (registrationId, date, status) — for -> Course "
             "(courseCode, title, credits, capacity).")]
 
     s.append(H1("8.  Traceability"))
     s += [P("<b>Traceability</b> means being able to answer “Where did this design element come from?” "
-            "and “Which requirement does this design element support?” — e.g. Requirement R01 → Use Case "
-            "“Register for Course” → sequence diagram → classes Student, Course, Registration, "
-            "RegistrationService → operations register(), checkCapacity(), checkPrerequisite(). That is a "
+            "and “Which requirement does this design element support?” — e.g. Requirement R01 -> Use Case "
+            "“Register for Course” -> sequence diagram -> classes Student, Course, Registration, "
+            "RegistrationService -> operations register(), checkCapacity(), checkPrerequisite(). That is a "
             "traceable design.")]
     s += FIG("w12_traceability.png", "Figure 6 — Traceability")
 
@@ -104,10 +104,10 @@ def story():
     s.append(H1("PART F — THE SEQUENCE DIAGRAM"))
     s.append(H1("9.  Why a Sequence Diagram — and Checking Consistency"))
     s += [P("The use case says “Student registers for a course” but does not tell us exactly how the "
-            "interaction happens. The sequence diagram provides that detail: Student → "
-            "RegistrationService <font name='Mono'>register(course)</font> → Course "
-            "<font name='Mono'>checkCapacity()</font> and <font name='Mono'>checkPrerequisite()</font> → "
-            "RegistrationService <font name='Mono'>createRegistration()</font> → Registration → "
+            "interaction happens. The sequence diagram provides that detail: Student -> "
+            "RegistrationService <font name='Mono'>register(course)</font> -> Course "
+            "<font name='Mono'>checkCapacity()</font> and <font name='Mono'>checkPrerequisite()</font> -> "
+            "RegistrationService <font name='Mono'>createRegistration()</font> -> Registration -> "
             "confirmation back to Student. Checking consistency: the elements used in the sequence "
             "diagram (Student, RegistrationService, Course, Registration) should exist in the class "
             "model. If the sequence suddenly says <font name='Mono'>PaymentProcessor</font> but the "
@@ -120,8 +120,8 @@ def story():
     s.append(H1("10.  The Registration State Model"))
     s += [P("A registration is not always in the same condition — it may go through Requested, "
             "Validated, Confirmed, Cancelled or Rejected. The state model forces the business rules to "
-            "be explicit: is <b>[CONFIRMED] → [CANCELLED]</b> final, or does the business allow "
-            "<b>[CANCELLED] → [REQUESTED] → [CONFIRMED]</b> again? The model makes the decision "
+            "be explicit: is <b>[CONFIRMED] -> [CANCELLED]</b> final, or does the business allow "
+            "<b>[CANCELLED] -> [REQUESTED] -> [CONFIRMED]</b> again? The model makes the decision "
             "visible.")]
     s += FIG("w12_state_machine.png", "Figure 8 — Registration state model")
 
@@ -130,19 +130,19 @@ def story():
     s.append(H1("11.  Activity Diagram vs Sequence Diagram"))
     s += [P("Students often confuse these. The <b>sequence diagram</b> focuses on "
             "<i>who communicates with whom, and in what order</i>. The <b>activity diagram</b> focuses "
-            "on <i>what activities occur in a workflow</i>. The registration activity is: login → "
-            "display courses → select course → check prerequisites → [satisfied?] → check capacity → "
-            "[space available?] → create registration → confirm.")]
+            "on <i>what activities occur in a workflow</i>. The registration activity is: login -> "
+            "display courses -> select course -> check prerequisites -> [satisfied?] -> check capacity -> "
+            "[space available?] -> create registration -> confirm.")]
     s += FIG("w12_activity.png", "Figure 9 — Registration activity")
     s += FIG("w12_views_compare.png", "Figure 10 — Comparing the behavioural views")
 
     # PART I — integrating ------------------------------------------------------------
     s.append(H1("PART I — INTEGRATING THE FOUR MODELS"))
     s.append(H1("12.  Putting Everything Together"))
-    s += [P("For <b>Register for Course</b> we now have the use case (Student → Register for Course), "
-            "the activity (login → select course → check prerequisite → check capacity → create → "
-            "confirm), the sequence (Student → RegistrationService → Course → Registration), the state "
-            "(Requested → Validated → Confirmed) and the class model (Student, Course, Registration, "
+    s += [P("For <b>Register for Course</b> we now have the use case (Student -> Register for Course), "
+            "the activity (login -> select course -> check prerequisite -> check capacity -> create -> "
+            "confirm), the sequence (Student -> RegistrationService -> Course -> Registration), the state "
+            "(Requested -> Validated -> Confirmed) and the class model (Student, Course, Registration, "
             "RegistrationService). These models now describe the same functionality from different "
             "viewpoints.")]
     s += FIG("w12_integrated_example.png", "Figure 11 — The complete integrated example")
@@ -213,7 +213,7 @@ def story():
     s.append(H1("18.  Design Validation"))
     s += [P("<b>Validation</b> asks “Does our design actually represent what the system is supposed to "
             "do?” If the requirement says <i>“students cannot register for a full course”</i> but the "
-            "sequence shows Student → RegistrationService → Create Registration with no "
+            "sequence shows Student -> RegistrationService -> Create Registration with no "
             "<font name='Mono'>checkCapacity()</font>, the design is incomplete. The fixed design inserts "
             "<font name='Mono'>Course.checkCapacity()</font> (and likewise "
             "<font name='Mono'>checkPrerequisite()</font> for the prerequisites rule).")]
@@ -248,11 +248,11 @@ def story():
             "Course (courseCode, title, capacity); Registration (registrationId, date, status). "
             "<b>Operations:</b> Student.registerCourse(); Course.hasAvailableSpace(), "
             "checkPrerequisite(); Registration.confirm(), cancel(); RegistrationService.register(). "
-            "<b>Sequence:</b> Student → register(course) → RegistrationService → checkPrerequisite() → "
-            "Course → available? → create() → Registration → confirm() → Student. <b>Activity:</b> "
-            "login → select course → check prerequisite → check capacity → create → confirm. "
-            "<b>State:</b> Requested → Validated → Confirmed → Cancelled. <b>Architecture:</b> "
-            "Presentation → RegistrationService → domain → repositories → database.")]
+            "<b>Sequence:</b> Student -> register(course) -> RegistrationService -> checkPrerequisite() -> "
+            "Course -> available? -> create() -> Registration -> confirm() -> Student. <b>Activity:</b> "
+            "login -> select course -> check prerequisite -> check capacity -> create -> confirm. "
+            "<b>State:</b> Requested -> Validated -> Confirmed -> Cancelled. <b>Architecture:</b> "
+            "Presentation -> RegistrationService -> domain -> repositories -> database.")]
     s += FIG("w12_summary_flow.png", "Figure 18 — The Week 12 mental model")
 
     # tutorial / practical ----------------------------------------------------------------
@@ -293,10 +293,10 @@ def story():
          ["Component / deployment", "How is the software organised and deployed?"]],
         widths=[0.34 * DOC_W, 0.66 * DOC_W]))
     s.append(CALLOUT("THE CENTRAL PRINCIPLE OF WEEK 12",
-        ["Every model should contribute to the <b>same understanding of the system</b>. Requirements → "
-         "use cases → what the system must do → behavioural models → how the behaviour occurs → "
-         "object/class model → what structure supports the behaviour → architecture → how the software "
-         "is organised → implementation. <b>Don't memorise UML diagrams as independent pictures — learn "
+        ["Every model should contribute to the <b>same understanding of the system</b>. Requirements -> "
+         "use cases -> what the system must do -> behavioural models -> how the behaviour occurs -> "
+         "object/class model -> what structure supports the behaviour -> architecture -> how the software "
+         "is organised -> implementation. <b>Don't memorise UML diagrams as independent pictures — learn "
          "to tell the same system's story through different models, and make sure those models "
          "agree.</b>"]))
 

@@ -21,9 +21,9 @@ def story():
             "Design</b> — an overview of design, and the combining of the <b>Object Model</b>, the "
             "<b>Dynamic Model</b> and the <b>Behavioural Model</b> that we built in Weeks 4–8."),
           P("The most important transition in OOAD happens here:"),
-          P("<b>ANALYSIS — “What does the system need?”  →  DESIGN — “How are we going to build "
+          P("<b>ANALYSIS — “What does the system need?”  ->  DESIGN — “How are we going to build "
             "it?”</b>")]
-    s += FIG("w10_progression.png", "Figure 1 — Where Week 10 fits: analysis → design")
+    s += FIG("w10_progression.png", "Figure 1 — Where Week 10 fits: analysis -> design")
 
     # 2. learning outcomes -----------------------------------------------------
     s.append(H1("2.  Learning Outcomes"))
@@ -80,7 +80,7 @@ def story():
             "<b>analysis</b> identifies the concepts <b>Student, Course, Registration</b>. "
             "<b>Design</b> then asks how the software will make this happen and introduces "
             "<b>RegistrationService, CourseRepository, StudentRepository</b> and the flow "
-            "Student → RegistrationService → CourseRepository → Database. Now we are making "
+            "Student -> RegistrationService -> CourseRepository -> Database. Now we are making "
             "implementation-oriented decisions.")]
 
     # 7. analysis model vs design model ------------------------------------------
@@ -189,7 +189,7 @@ def story():
     s.append(H1("PART I &amp; J — SEPARATION OF CONCERNS AND ARCHITECTURE"))
     s.append(H1("17.  Separation of Concerns"))
     s += [P("<b>Separation of concerns</b> means dividing a system so that different concerns are "
-            "handled by appropriate parts — Presentation → Business Logic → Data Access → Database — "
+            "handled by appropriate parts — Presentation -> Business Logic -> Data Access -> Database — "
             "rather than mixing SQL, password hashing, HTML and database connections into one "
             "<font name='Mono'>LoginScreen</font>.")]
     s += FIG("w10_separation.png", "Figure 12 — Separation of concerns")
@@ -214,19 +214,19 @@ def story():
             "StudentStatus</font>) and typed operations (<font name='Mono'>registerCourse(), "
             "dropCourse(), getRegisteredCourses()</font>), and finally implementation in "
             "<font name='Mono'>Student.java</font>, <font name='Mono'>Student.cs</font> or "
-            "<font name='Mono'>Student.ts</font>. The path is: Real-world problem → Analysis model → "
-            "Design model → Implementation → Running software.")]
-    s += FIG("w10_refinement.png", "Figure 14 — Refinement: analysis → design → code")
+            "<font name='Mono'>Student.ts</font>. The path is: Real-world problem -> Analysis model -> "
+            "Design model -> Implementation -> Running software.")]
+    s += FIG("w10_refinement.png", "Figure 14 — Refinement: analysis -> design -> code")
 
     # PART L/M — combining the three models -----------------------------------------
     s.append(H1("PART L &amp; M — COMBINING THE THREE MODELS  (the core of Week 10)"))
     s.append(H1("20.  The Three OOAD Models"))
     s += [P("<b>Object Model</b> — describes the <b>structure</b>: what things/classes exist "
             "(Student, Course, Registration, Payment). <b>Dynamic Model</b> — describes how objects "
-            "change over <b>time</b> and respond to events (Registration: Requested → Pending → "
-            "Confirmed, or Pending → Rejected). <b>Behavioural Model</b> — describes <b>what the system "
-            "does</b> and how actors/objects interact (Student → Register Course → Validate Registration "
-            "→ Confirm Registration)."),
+            "change over <b>time</b> and respond to events (Registration: Requested -> Pending -> "
+            "Confirmed, or Pending -> Rejected). <b>Behavioural Model</b> — describes <b>what the system "
+            "does</b> and how actors/objects interact (Student -> Register Course -> Validate Registration "
+            "-> Confirm Registration)."),
           P("Why do we need all three? Knowing the parts of a car (Wheel, Engine, Brake, Steering) is "
             "not enough — we also need to know what happens when the driver presses the brake, and how "
             "the brake, wheel and engine systems interact. In software, <b>structure + behaviour + "
@@ -238,8 +238,8 @@ def story():
             "<b>(1)</b> Behavioural model — use case <b>Register Course</b>. <b>(2)</b> Identify "
             "objects: Student, Course, Registration. <b>(3)</b> Object model — the classes with their "
             "attributes. <b>(4)</b> Relationships — Student 1 — 0..* Registration — Course. "
-            "<b>(5)</b> Dynamic model — Registration states Requested → Validated → Confirmed (or "
-            "Rejected). <b>(6)</b> Sequence — Student → RegistrationService → Course → Registration → "
+            "<b>(5)</b> Dynamic model — Registration states Requested -> Validated -> Confirmed (or "
+            "Rejected). <b>(6)</b> Sequence — Student -> RegistrationService -> Course -> Registration -> "
             "Student. <b>(7)</b> Design — Student, Course, Registration plus RegistrationService, "
             "CourseRepository and RegistrationRepository.")]
     s += FIG("w10_integration.png", "Figure 16 — Combining the models")
@@ -251,21 +251,21 @@ def story():
             "<font name='Mono'>Course</font> only <font name='Mono'>courseCode, title, capacity</font> "
             "but the sequence diagram calls <font name='Mono'>Course.checkPrerequisite()</font>, the "
             "operation is missing — an inconsistency. Likewise, if the use case actor is "
-            "<b>Student</b> but the sequence diagram shows <font name='Mono'>Lecturer → "
+            "<b>Student</b> but the sequence diagram shows <font name='Mono'>Lecturer -> "
             "registerCourse()</font>, the models disagree and must be reconciled.")]
 
     s.append(H1("23.  Traceability"))
     s += [P("<b>Traceability</b> means being able to follow a requirement through the development "
-            "artefacts: Requirement → Use Case → Activity diagram → Sequence diagram → Class model → "
-            "Design classes → Code → Test case. If the requirement changes, developers can identify what "
+            "artefacts: Requirement -> Use Case -> Activity diagram -> Sequence diagram -> Class model -> "
+            "Design classes -> Code -> Test case. If the requirement changes, developers can identify what "
             "models and code may be affected — this is extremely valuable.")]
     s += FIG("w10_traceability.png", "Figure 17 — Traceability")
 
     # PART O/P/Q — sequence, class, interfaces --------------------------------------
     s.append(H1("PART O–Q — SEQUENCE DIAGRAMS, DESIGN CLASSES AND INTERFACES"))
     s.append(H1("24.  Sequence and Class Diagrams in Design"))
-    s += [P("<b>Sequence diagrams</b> show the order of interactions between objects — Student → "
-            "RegistrationService <font name='Mono'>register()</font> → Course "
+    s += [P("<b>Sequence diagrams</b> show the order of interactions between objects — Student -> "
+            "RegistrationService <font name='Mono'>register()</font> -> Course "
             "<font name='Mono'>checkAvailability()</font> — telling us far more than simply that "
             "Student, Course and Registration exist. <b>Design class diagrams</b> enrich the analysis "
             "classes with <b>visibility, attribute types, parameter types, return types and "
@@ -297,10 +297,10 @@ def story():
 
     # PART T — complete process -------------------------------------------------------
     s.append(H1("PART T — THE COMPLETE OO DESIGN PROCESS"))
-    s += [P("Requirement → Use-case model → Behavioural model → interactions → Object model (Student — "
-            "Registration — Course) → Dynamic model (Requested → Validated → Confirmed) → Design model "
-            "(RegistrationService, CourseRepository, RegistrationRepository) → Architecture "
-            "(Presentation / Business Logic / Data Access) → Implementation → Code. That is the central "
+    s += [P("Requirement -> Use-case model -> Behavioural model -> interactions -> Object model (Student — "
+            "Registration — Course) -> Dynamic model (Requested -> Validated -> Confirmed) -> Design model "
+            "(RegistrationService, CourseRepository, RegistrationRepository) -> Architecture "
+            "(Presentation / Business Logic / Data Access) -> Implementation -> Code. That is the central "
             "lesson of Week 10.")]
     s += FIG("w10_master.png", "Figure 18 — Week 10 master diagram")
 
@@ -313,8 +313,8 @@ def story():
         "<b>Task 1</b> — Identify classes (Student, Course, Registration…) and justify each.",
         "<b>Task 2</b> — Add responsibilities (Student: login(), registerCourse(), dropCourse(); Course: checkAvailability(), checkPrerequisite(); Registration: create(), confirm(), cancel()).",
         "<b>Task 3</b> — Draw a class diagram (classes, attributes, operations, associations, multiplicities).",
-        "<b>Task 4</b> — Draw a sequence diagram (Student → RegistrationService → Course → Registration).",
-        "<b>Task 5</b> — Draw a state machine for Registration (Requested → Validated → Confirmed; alternative → Rejected).",
+        "<b>Task 4</b> — Draw a sequence diagram (Student -> RegistrationService -> Course -> Registration).",
+        "<b>Task 5</b> — Draw a state machine for Registration (Requested -> Validated -> Confirmed; alternative -> Rejected).",
         "<b>Task 6</b> — Critique a class that contains login(), registerCourse(), payFees(), sendSMS(), generateReport(), connectDatabase(), calculateResults() and uploadAssignment(): is cohesion high or low, why, and how could it be redesigned?",
     ])
 
@@ -364,7 +364,7 @@ def story():
         ["<b>Analysis tells us what the system needs; design determines how the software will be "
          "organised to satisfy those needs.</b> The three models are not competing — they complement "
          "one another: Object Model (what exists) + Dynamic Model (what changes) + Behavioural Model "
-         "(what happens) → integrated understanding → object-oriented design → implementable software."]))
+         "(what happens) -> integrated understanding -> object-oriented design -> implementable software."]))
 
     # exam --------------------------------------------------------------------------------
     s.append(H1("32.  Examination-Style Questions"))

@@ -57,8 +57,8 @@ def story():
             "designed around object-oriented development, closely associated with UML and use-case-driven "
             "development. The <b>Rational Unified Process (RUP)</b> is a specific commercial "
             "implementation of UP developed by Rational and later associated with IBM — UP is the general "
-            "framework; RUP is one implementation of it. A traditional process might treat Requirements → "
-            "Analysis → Design → Coding → Testing → Deployment as separate stages; UP instead encourages "
+            "framework; RUP is one implementation of it. A traditional process might treat Requirements -> "
+            "Analysis -> Design -> Coding -> Testing -> Deployment as separate stages; UP instead encourages "
             "repeated cycles with feedback.")]
     s += FIG("w9_up_vs_rup.png", "Figure 2 — UP vs RUP")
     s += FIG("w9_waterfall_vs_up.png", "Figure 3 — Waterfall vs UP")
@@ -88,7 +88,7 @@ def story():
             "(RegistrationController, CourseService), the code and the test scenarios."),
           P("<b>Architecture-centred:</b> UP establishes and validates a strong architectural foundation "
             "early, especially during Elaboration. Software architecture is the high-level organisation of "
-            "a system (User Interface → Business Logic → Data Access → Database). A system built for 100 "
+            "a system (User Interface -> Business Logic -> Data Access -> Database). A system built for 100 "
             "students may collapse with 100,000, so major architectural risks are identified early."),
           P("<b>Iterative and incremental:</b> the system is developed through repeated cycles, each "
             "improving or extending it. <b>Risk-driven:</b> UP identifies and addresses significant risks "
@@ -99,7 +99,7 @@ def story():
 
     # ============ PART E — FOUR PHASES ============
     s.append(H1("PART E — THE FOUR UP PHASES"))
-    s.append(H1("7.  Inception → Elaboration → Construction → Transition"))
+    s.append(H1("7.  Inception -> Elaboration -> Construction -> Transition"))
     s += [P("<b>Inception</b> asks “should we build this system, and what are we trying to build?” — it "
             "establishes the business case, scope, high-level requirements, major actors and use cases, "
             "cost, schedule, risks and success criteria, ending at the <b>Lifecycle Objectives "
@@ -118,7 +118,7 @@ def story():
     s += FIG("w9_phase_questions.png", "Figure 9 — The four phases compared")
 
     s.append(H1("8.  A Phase Is NOT a Waterfall Stage"))
-    s += [P("Students may look at Inception → Elaboration → Construction → Transition and think it is "
+    s += [P("Students may look at Inception -> Elaboration -> Construction -> Transition and think it is "
             "“waterfall with different names”. No. <b>A phase contains one or more iterations</b> — "
             "iterations provide planned intervals that deliver incremental value within each phase. That "
             "is what makes UP fundamentally different from treating the four phases as four rigid "
@@ -136,8 +136,8 @@ def story():
             "<b>Configuration &amp; Change Management</b>, <b>Project Management</b> and "
             "<b>Environment</b>."),
           P("A common misconception is “first requirements, then design, then implementation, then "
-            "testing”. In UP the disciplines overlap: during an iteration requirements → analysis → "
-            "design → implementation → testing → feedback → refined requirements, and the <b>intensity</b> "
+            "testing”. In UP the disciplines overlap: during an iteration requirements -> analysis -> "
+            "design -> implementation -> testing -> feedback -> refined requirements, and the <b>intensity</b> "
             "of each discipline changes across phases — requirements are heavy in Inception and "
             "Elaboration, coding is heavy in Construction, testing and deployment are heavy in Transition. "
             "Coding can even occur in Elaboration (architectural prototypes).")]
@@ -197,9 +197,9 @@ def story():
     # ============ CONNECTING ============
     s.append(H1("14.  Connecting UP to the UML Models"))
     s += [P("The class/object, dynamic and behavioural models of previous weeks do not exist in "
-            "isolation — within UP they become <b>artefacts</b> used during development: requirement → "
-            "use case → use-case diagram → activity diagram → sequence diagram → class/object model → "
-            "design → implementation. <b>The Unified Process provides the development process; UML "
+            "isolation — within UP they become <b>artefacts</b> used during development: requirement -> "
+            "use case -> use-case diagram -> activity diagram -> sequence diagram -> class/object model -> "
+            "design -> implementation. <b>The Unified Process provides the development process; UML "
             "provides many of the modelling languages used within that process.</b>"),
           P("Worked example — the Mzuni Online Student Registration System: <b>Inception</b> identifies "
             "actors (Student, Registrar, Finance Officer, Payment Gateway), use cases (Login, Register "
@@ -241,8 +241,8 @@ def story():
         widths=[0.34 * DOC_W, 0.66 * DOC_W]))
     s.append(CALLOUT("THE BIG PICTURE — FIVE THINGS TO REMEMBER",
         ["1. UP is <b>iterative and incremental</b>. 2. UP is <b>use-case driven</b>. 3. UP is "
-         "<b>architecture-centred</b>. 4. UP has <b>four phases</b> — Inception → Elaboration → "
-         "Construction → Transition. 5. <b>Phases contain iterations</b> — that is what makes UP "
+         "<b>architecture-centred</b>. 4. UP has <b>four phases</b> — Inception -> Elaboration -> "
+         "Construction -> Transition. 5. <b>Phases contain iterations</b> — that is what makes UP "
          "different from four rigid sequential stages. Week 8 asked “what should the system do?”; Week 9 "
          "asks “how should the team organise the work?”; Weeks 10+ ask “how should we design the "
          "software?”"]))

@@ -27,7 +27,7 @@ def slides(d):
 
     # 3. progression
     s = d.slide()
-    d.header(s, "Week 11 → 12 → 13", "From detailed design elements to one coherent system")
+    d.header(s, "Week 11 -> 12 -> 13", "From detailed design elements to one coherent system")
     d.pic(s, "w12_progression.png", y=1.6, w=10.6)
     d.takeaway(s, "Week 12 brings every model together into one consistent system design.")
 
@@ -45,7 +45,7 @@ def slides(d):
 
     # 6. big picture
     s = d.slide()
-    d.header(s, "The Big Picture", "Requirements → models → integrated design → implementation")
+    d.header(s, "The Big Picture", "Requirements -> models -> integrated design -> implementation")
     d.pic(s, "w12_big_picture.png", y=1.5, w=10.4)
     d.takeaway(s, "That is the central idea of Week 12.")
 
@@ -158,8 +158,8 @@ def slides(d):
 
     # 23. closing
     d.closing("REVISION & NEXT STEPS", [
-        "Build a full integrated model for \u201cpatient books an appointment\u201d (use case → class → sequence → activity → state).",
-        "Audit one use case for missing links (requirement → class → operation → test).",
+        "Build a full integrated model for \u201cpatient books an appointment\u201d (use case -> class -> sequence -> activity -> state).",
+        "Audit one use case for missing links (requirement -> class -> operation -> test).",
         "Explain model vs diagram using the Google Maps analogy.",
         "Next week: multilayer architecture, reusable/adaptable components, and architectural design.",
     ])

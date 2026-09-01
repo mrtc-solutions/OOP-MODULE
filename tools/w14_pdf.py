@@ -25,7 +25,7 @@ def story():
             "cases, deployments and related modelling concepts as parts of the same overall modelling "
             "language — so students should not think of UML diagrams as independent drawings. "
             "<b>Each diagram provides a different view of the same system.</b>")]
-    s += FIG("w14_progression.png", "Figure 1 — Week 13 → Week 14")
+    s += FIG("w14_progression.png", "Figure 1 — Week 13 -> Week 14")
 
     # 2. learning outcomes -----------------------------------------------------
     s.append(H1("2.  Learning Outcomes"))
@@ -57,11 +57,11 @@ def story():
             "implementation-oriented.")]
     s += FIG("w14_analysis_vs_design.png", "Figure 2 — Analysis vs design")
 
-    s.append(H1("4.  Analysis Model → Design Model"))
-    s += [P("Requirements → Use cases → Analysis model → Design decisions → Design model → "
+    s.append(H1("4.  Analysis Model -> Design Model"))
+    s += [P("Requirements -> Use cases -> Analysis model -> Design decisions -> Design model -> "
             "Implementation. The important point: <b>we should not randomly invent design classes</b> — "
             "they should be justified by the requirements and analysis.")]
-    s += FIG("w14_transformation.png", "Figure 3 — Analysis → design transformation")
+    s += FIG("w14_transformation.png", "Figure 3 — Analysis -> design transformation")
 
     # PART B — the three models ----------------------------------------------------
     s.append(H1("PART B — THE THREE MAJOR MODELS"))
@@ -69,7 +69,7 @@ def story():
     s += [P("The <b>object model</b> describes the structural/static view — what things exist and how "
             "they relate (classes, objects, attributes, operations, associations, generalisation, "
             "aggregation/composition). The <b>dynamic model</b> focuses on how objects behave and change "
-            "over time — Course: Available → Full → Closed, with events such as “student registers” or "
+            "over time — Course: Available -> Full -> Closed, with events such as “student registers” or "
             "“course reaches capacity.” The <b>behavioural model</b> focuses on what the system does from "
             "the users' perspective — use cases, use-case diagrams, sequence diagrams, communication "
             "diagrams and activity diagrams."),
@@ -108,13 +108,13 @@ def story():
             "<b>doing</b> (Course checks whether space is available). A Student class that also does "
             "registerAnyCourse(), calculateCourseCapacity(), sendEmail(), generatePaymentReceipt() and "
             "connectToDatabase() has poor cohesion — a better assignment routes through "
-            "RegistrationService → Course → RegistrationRepository so each class has a focused "
+            "RegistrationService -> Course -> RegistrationRepository so each class has a focused "
             "purpose.")]
     s += FIG("w14_responsibility.png", "Figure 7 — Responsibility assignment")
 
     # PART F/G — design classes and visibility ------------------------------------------------
     s.append(H1("PART F &amp; G — DESIGN CLASSES AND VISIBILITY"))
-    s.append(H1("9.  Analysis Class → Design Class"))
+    s.append(H1("9.  Analysis Class -> Design Class"))
     s += [P("A <b>design class</b> is defined with sufficient detail to support implementation: precise "
             "attributes, data types, operations, parameter types, return types, visibility, "
             "relationships, interfaces and dependencies. The analysis class "
@@ -122,7 +122,7 @@ def story():
             "<font name='Mono'>Student { -studentId: String; -name: String; -email: String; "
             "-programme: Programme; +register(course: Course): Registration; +drop(course: Course): "
             "void }</font>.")]
-    s += FIG("w14_design_class.png", "Figure 8 — Analysis class → design class")
+    s += FIG("w14_design_class.png", "Figure 8 — Analysis class -> design class")
 
     s.append(H1("10.  Visibility"))
     s += [P("Common UML visibility: <font name='Mono'>+</font> public, <font name='Mono'>-</font> "
@@ -142,14 +142,14 @@ def story():
             "information, operations perform actions.")]
 
     # PART I — sequence -> class ----------------------------------------------------------------
-    s.append(H1("PART I — SEQUENCE DIAGRAM → CLASS DESIGN"))
+    s.append(H1("PART I — SEQUENCE DIAGRAM -> CLASS DESIGN"))
     s.append(H1("11.  From Messages to Operations"))
     s += [P("A sequence diagram is not only for presentation — it helps discover <b>which objects need "
-            "which operations</b>. If the sequence shows Course → checkCapacity(), the Course class "
-            "should probably have <font name='Mono'>checkCapacity()</font>; if RegistrationService → "
+            "which operations</b>. If the sequence shows Course -> checkCapacity(), the Course class "
+            "should probably have <font name='Mono'>checkCapacity()</font>; if RegistrationService -> "
             "registerStudent(), then <font name='Mono'>registerStudent()</font> is required. "
             "<b>Messages in interaction diagrams can help refine operations in the class model.</b>")]
-    s += FIG("w14_sequence_to_class.png", "Figure 10 — Sequence diagram → class design")
+    s += FIG("w14_sequence_to_class.png", "Figure 10 — Sequence diagram -> class design")
 
     # PART J — consistency ------------------------------------------------------------------------
     s.append(H1("PART J — MODEL CONSISTENCY"))
@@ -166,29 +166,29 @@ def story():
     s.append(H1("PART K &amp; L — INTEGRATING THE MODELS"))
     s.append(H1("13.  Object Model + Dynamic Model"))
     s += [P("The class diagram shows the structure (Course with capacity, status, registerStudent()); "
-            "the state machine shows Available → Full → Closed. Connecting them: "
-            "<font name='Mono'>registerStudent()</font> may cause Available → Full when the final seat "
-            "is taken (e.g. capacity 50, registrations 49 → 50). "
+            "the state machine shows Available -> Full -> Closed. Connecting them: "
+            "<font name='Mono'>registerStudent()</font> may cause Available -> Full when the final seat "
+            "is taken (e.g. capacity 50, registrations 49 -> 50). "
             "<b>The operation has a relationship with the object's state.</b>")]
     s += FIG("w14_object_dynamic.png", "Figure 12 — Object model + dynamic model")
 
     s.append(H1("14.  Object Model + Activity Model"))
     s += [P("Given the registration workflow, ask <i>which objects perform these activities?</i> — "
-            "Select course → RegistrationController; Check prerequisite → Course/RegistrationService; "
-            "Check capacity → Course; Create registration → RegistrationService; Save registration → "
-            "RegistrationRepository; Send confirmation → NotificationService. This transforms a "
+            "Select course -> RegistrationController; Check prerequisite -> Course/RegistrationService; "
+            "Check capacity -> Course; Create registration -> RegistrationService; Save registration -> "
+            "RegistrationRepository; Send confirmation -> NotificationService. This transforms a "
             "behavioural model into design responsibilities.")]
-    s += FIG("w14_activity_mapping.png", "Figure 13 — Activity → responsibility mapping")
+    s += FIG("w14_activity_mapping.png", "Figure 13 — Activity -> responsibility mapping")
 
     # PART M/N — use case model + traceability ---------------------------------------------------------
     s.append(H1("PART M &amp; N — USE CASE MODEL AND TRACEABILITY"))
-    s.append(H1("15.  Use Case → Scenario → Sequence → Responsibilities → Operations → Design Classes"))
+    s.append(H1("15.  Use Case -> Scenario -> Sequence -> Responsibilities -> Operations -> Design Classes"))
     s += [P("The use case tells what the user wants; the class model tells what objects are available; "
             "the sequence diagram tells how those objects cooperate. This gives one of the most useful "
             "workflows in OOAD. <b>Traceability</b> follows a requirement through the process: "
-            "requirement (“students must register for courses”) → use case (Register for Course) → "
-            "sequence (Student → RegistrationService → Course → RegistrationRepository) → classes → "
-            "operations (registerCourse(), checkCapacity(), checkPrerequisite(), saveRegistration()) → "
+            "requirement (“students must register for courses”) -> use case (Register for Course) -> "
+            "sequence (Student -> RegistrationService -> Course -> RegistrationRepository) -> classes -> "
+            "operations (registerCourse(), checkCapacity(), checkPrerequisite(), saveRegistration()) -> "
             "code.")]
 
     # PART O/P/Q — controller, service, domain knowledge ------------------------------------------------
@@ -198,10 +198,10 @@ def story():
             "RegistrationController receives <font name='Mono'>registerCourse(studentId, courseId)</font> "
             "and coordinates the process. A controller does <b>not</b> mean “do everything” — it must not "
             "become a God class checking the database, calculating fees, applying rules, creating HTML "
-            "and sending SMS; it coordinates RegistrationService → (Course, Repository) instead."),
+            "and sending SMS; it coordinates RegistrationService -> (Course, Repository) instead."),
           P("A <b>service</b> provides an application capability — RegistrationService with "
-            "registerStudent(), dropStudent(), getRegistration() — coordinating check prerequisite → "
-            "check capacity → create Registration → save → send confirmation. "
+            "registerStudent(), dropStudent(), getRegistration() — coordinating check prerequisite -> "
+            "check capacity -> create Registration -> save -> send confirmation. "
             "<b>Domain objects should contain domain knowledge:</b> rather than scattering the "
             "capacity rule throughout the UI, give Course <font name='Mono'>isAvailable()</font> and "
             "<font name='Mono'>hasCapacity()</font> — assigning responsibilities to the object that has "
@@ -216,13 +216,13 @@ def story():
             "Student, Course, Registration become Student, RegistrationController, RegistrationService, "
             "Course, Registration, CourseRepository, RegistrationRepository and NotificationService. "
             "Adding classes is not a sign the analysis was wrong; implementation introduces technical "
-            "responsibilities (e.g. “save registration” → RegistrationRepository) that were not obvious "
+            "responsibilities (e.g. “save registration” -> RegistrationRepository) that were not obvious "
             "during early analysis."),
           P("<b>Designing for change</b>: ask <i>what is likely to change?</i> — database, payment "
             "provider, notification channel, user interface, external API — while the core concepts of "
             "Student, Course and registration rules are less likely to change. Put boundaries around the "
-            "likely changes: instead of RegistrationService → AirtelMoneyAPI, use RegistrationService → "
-            "PaymentGateway → (Provider A, Provider B).")]
+            "likely changes: instead of RegistrationService -> AirtelMoneyAPI, use RegistrationService -> "
+            "PaymentGateway -> (Provider A, Provider B).")]
     s += FIG("w14_design_change.png", "Figure 16 — Designing for change")
 
     # PART T — design patterns ----------------------------------------------------------------
@@ -242,14 +242,14 @@ def story():
     s.append(H1("PART U — INTEGRATED CASE STUDY"))
     s.append(H1("19.  University Course Registration"))
     s += [P("Requirement: students must register for available courses. <b>Use case:</b> Register for "
-            "Course. <b>Analysis classes:</b> Student — registers → Registration — for → Course. "
-            "<b>Sequence:</b> Student → RegistrationController → RegistrationService → "
-            "checkCapacity() → Course → create → Registration → save → RegistrationRepository. "
-            "<b>Dynamic model:</b> Course Available → Full → Closed. <b>Activity:</b> select course → "
-            "check prerequisite → check capacity → [available?] → create → save → send confirmation. "
-            "<b>Design model:</b> RegistrationController (+registerCourse()) → RegistrationService "
-            "(+registerStudent(), +dropCourse()) → Course (capacity, status, isAvailable()) and "
-            "Registration (date, status, confirm()) → RegistrationRepository (+save(), +find()). "
+            "Course. <b>Analysis classes:</b> Student — registers -> Registration — for -> Course. "
+            "<b>Sequence:</b> Student -> RegistrationController -> RegistrationService -> "
+            "checkCapacity() -> Course -> create -> Registration -> save -> RegistrationRepository. "
+            "<b>Dynamic model:</b> Course Available -> Full -> Closed. <b>Activity:</b> select course -> "
+            "check prerequisite -> check capacity -> [available?] -> create -> save -> send confirmation. "
+            "<b>Design model:</b> RegistrationController (+registerCourse()) -> RegistrationService "
+            "(+registerStudent(), +dropCourse()) -> Course (capacity, status, isAvailable()) and "
+            "Registration (date, status, confirm()) -> RegistrationRepository (+save(), +find()). "
             "<b>That is what it means to integrate the models.</b>")]
     s += FIG("w14_integrated_design.png", "Figure 18 — The integrated design model")
 
@@ -295,17 +295,17 @@ def story():
             "capacity; a registration record is created and confirmation sent”, identify actors, the use "
             "case, analysis classes, design classes, operations, the sequence of interactions and course "
             "states. <b>Tutorial 2</b> — given a class model (Student, Course, Registration), a sequence "
-            "message (RegistrationService → verifyPrerequisite()) and a state model (Course Available → "
+            "message (RegistrationService -> verifyPrerequisite()) and a state model (Course Available -> "
             "Full), state what changes make the models consistent. <b>Tutorial 3</b> — redesign a "
             "Student class doing registerCourse(), sendEmail(), saveToDatabase(), calculateFees(), "
             "checkCourseCapacity() and generateReport()."),
           P("<b>Practical (1 hour):</b> produce an integrated design package for the University Course "
             "Registration System — refine the class diagram (attributes, types, operations, visibility, "
             "relationships); a sequence diagram (Student, RegistrationController, RegistrationService, "
-            "Course, Registration, RegistrationRepository); a state model for Course (Created → "
-            "Available → Full → Closed); an activity diagram; and cross-check at least three "
-            "consistency relationships (sequence message → operation, state transition → event, "
-            "activity → responsibility, use case → design classes).")]
+            "Course, Registration, RegistrationRepository); a state model for Course (Created -> "
+            "Available -> Full -> Closed); an activity diagram; and cross-check at least three "
+            "consistency relationships (sequence message -> operation, state transition -> event, "
+            "activity -> responsibility, use case -> design classes).")]
 
     # summary --------------------------------------------------------------
     s.append(H1("23.  Week 14 Summary and Key Terms"))
@@ -313,20 +313,20 @@ def story():
         ["Concept", "Simple meaning", "Example"],
         [["Analysis / design", "Understand the problem / decide how to implement", "Student needs registration / RegistrationService"],
          ["Object model", "What exists", "Student, Course"],
-         ["Dynamic model", "How things change", "Available → Full"],
+         ["Dynamic model", "How things change", "Available -> Full"],
          ["Behavioural model", "What the system does / interactions", "Register Course"],
          ["Responsibility", "What a class knows/does", "Course checks capacity"],
          ["Attribute / operation", "Information held / action performed", "courseCode / register()"],
          ["Controller", "Coordinates a request", "RegistrationController"],
          ["Service", "Provides an application capability", "RegistrationService"],
          ["Repository", "Handles persistence", "CourseRepository"],
-         ["Traceability", "Follow requirement through design", "Requirement → Code"],
+         ["Traceability", "Follow requirement through design", "Requirement -> Code"],
          ["Model consistency", "Diagrams agree", "sequence message matches operation"]],
         widths=[0.28 * DOC_W, 0.4 * DOC_W, 0.32 * DOC_W]))
     s.append(CALLOUT("THE MOST IMPORTANT CONCEPT TO TAKE HOME",
-        ["Requirement → “Student registers” → use case “Register for Course” → scenario → sequence "
-         "diagram → class model → responsibilities → design classes → component/architecture → "
-         "implementation. Alongside: <b>class model ↔ dynamic model ↔ behavioural model</b> — the models "
+        ["Requirement -> “Student registers” -> use case “Register for Course” -> scenario -> sequence "
+         "diagram -> class model -> responsibilities -> design classes -> component/architecture -> "
+         "implementation. Alongside: <b>class model <- dynamic model <- behavioural model</b> — the models "
          "must <b>support one another, not contradict one another</b>. That is the central lesson of "
          "Week 14."]))
 

@@ -60,7 +60,7 @@ def content(doc, H):
         sub(doc, s)
     para(doc, "", space_after=2)
     para(doc, "Question 2  (8 marks)", size=12, bold=True, color=DARK, space_after=4)
-    para(doc, "Consider the hierarchy Animal → Dog, Cat and Bird, where each animal makes a sound.",
+    para(doc, "Consider the hierarchy Animal -> Dog, Cat and Bird, where each animal makes a sound.",
          space_after=4)
     for s in [
         "(a)  Draw the class hierarchy using generalization.                              [2]",

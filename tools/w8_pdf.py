@@ -112,9 +112,9 @@ def story():
     s += [P("A use case diagram gives only a high-level view. Serious analysis needs a <b>use-case "
             "specification</b> describing what happens inside the use case — its ID, name, primary actor, "
             "goal, preconditions, main success scenario, alternative flows and postconditions. For "
-            "Register for Course, the main scenario might be: select Register Course → view available "
-            "courses → select a course → check prerequisites → check capacity → confirm → create "
-            "registration → show confirmation. Alternative flows handle a full course (offer waitlist) and "
+            "Register for Course, the main scenario might be: select Register Course -> view available "
+            "courses -> select a course -> check prerequisites -> check capacity -> confirm -> create "
+            "registration -> show confirmation. Alternative flows handle a full course (offer waitlist) and "
             "missing prerequisites (stop registration)."),
           P("Telling a programmer only “build course registration” leaves them guessing what happens when "
             "a course is full or payment fails. The specification captures those requirements — which is "
@@ -132,9 +132,9 @@ def story():
             "<b>activation bar</b> (a period during which a participant is performing an operation), "
             "<b>message</b> (communication from one participant to another) and return message. Read from "
             "top to bottom: time flows downward."),
-          P("A login sequence: Student → System <font name='Mono'>login()</font>; System → Database "
-            "<font name='Mono'>validate()</font>; Database → System <font name='Mono'>valid</font>; "
-            "System → Student <font name='Mono'>confirmation</font>. Order matters — you cannot send "
+          P("A login sequence: Student -> System <font name='Mono'>login()</font>; System -> Database "
+            "<font name='Mono'>validate()</font>; Database -> System <font name='Mono'>valid</font>; "
+            "System -> Student <font name='Mono'>confirmation</font>. Order matters — you cannot send "
             "“login successful” before validating the credentials. A registration sequence introduces "
             "Registration UI, Registration Controller and Course Database, moving from requirements toward "
             "the software objects that will participate.")]
@@ -143,8 +143,8 @@ def story():
 
     s.append(H1("10.  Alternative Sequences — alt, loop, opt"))
     s += [P("Real systems do not always follow the happy path. Combined fragments model alternatives: "
-            "<b>alt</b> — only the branch whose guard is true executes (course available → register; "
-            "course full → show message); <b>loop</b> — behaviour repeats (for each student, send the "
+            "<b>alt</b> — only the branch whose guard is true executes (course available -> register; "
+            "course full -> show message); <b>loop</b> — behaviour repeats (for each student, send the "
             "result); <b>opt</b> — behaviour occurs only if a condition is true (send SMS only if "
             "notifications are enabled).")]
     s += FIG("w8_fragments.png", "Figure 11 — Combined fragments: alt, loop, opt")
@@ -167,8 +167,8 @@ def story():
     s.append(H1("12.  Activity Diagrams"))
     s += [P("An <b>activity diagram</b> models a workflow or flow of activities — the steps involved in "
             "carrying out a process, including decisions and parallel activities. Its notation: the "
-            "initial node (●), actions (rounded rectangles), the decision/merge diamond (◇), the final "
-            "node (◎), flow arrows, and <b>fork/join</b> thick bars. The diamond represents a decision "
+            "initial node (filled circle), actions (rounded rectangles), the decision/merge diamond, the final "
+            "node (bull's-eye), flow arrows, and <b>fork/join</b> thick bars. The diamond represents a decision "
             "whose outgoing paths carry guard conditions — [balance sufficient] / [balance "
             "insufficient]."),
           P("A fork splits one flow into multiple <b>concurrent</b> flows (after an order is confirmed: "
@@ -188,14 +188,14 @@ def story():
 
     # ============ PART M — WORKING TOGETHER ============
     s.append(H1("PART M — HOW THE MODELS WORK TOGETHER"))
-    s.append(H1("14.  Use Case → Activity → Sequence"))
+    s.append(H1("14.  Use Case -> Activity -> Sequence"))
     s += [P("The most important concept of Week 8: the models work together. From the requirement “a "
             "student should be able to register for a course”, we write the <b>use case</b> (Register "
-            "Course), model the <b>workflow</b> with an activity diagram (select course → check "
-            "prerequisite → check availability → confirm → create registration), then model the "
-            "<b>object interactions</b> with a sequence diagram (Student → Registration UI → "
-            "Registration Controller → Course Database). The chain runs: requirement → use case → activity "
-            "diagram → sequence diagram → object responsibilities → design.")]
+            "Course), model the <b>workflow</b> with an activity diagram (select course -> check "
+            "prerequisite -> check availability -> confirm -> create registration), then model the "
+            "<b>object interactions</b> with a sequence diagram (Student -> Registration UI -> "
+            "Registration Controller -> Course Database). The chain runs: requirement -> use case -> activity "
+            "diagram -> sequence diagram -> object responsibilities -> design.")]
     s += FIG("w8_traceability.png", "Figure 17 — Requirement to design, with traceability")
 
     s.append(H1("15.  Full Analysis Documentation"))
@@ -206,8 +206,8 @@ def story():
             "rules and a glossary. It matters because the client, analyst, designer, programmer, tester "
             "and project manager all need a common language and <b>traceability</b> — the client says "
             "“register courses”, the analyst calls it UC-03, the designer draws the sequence diagram, the "
-            "programmer identifies the objects, and the tester derives the scenarios. REQ-05 → UC-05 → "
-            "activity model → sequence model → design → test cases.")]
+            "programmer identifies the objects, and the tester derives the scenarios. REQ-05 -> UC-05 -> "
+            "activity model -> sequence model -> design -> test cases.")]
 
     # ============ COMMON CONFUSIONS ============
     s.append(H1("16.  Common Student Confusions"))
@@ -215,7 +215,7 @@ def story():
         ["Confusion", "Clarification"],
         [["Use case vs use case diagram", "A use case is one goal/behaviour (Register Course); the diagram is the visual representation of actors, use cases and relationships."],
          ["Use case vs activity diagram", "Use case = what goal; activity diagram = what workflow happens."],
-         ["Activity vs sequence", "Activity = workflow/process (check stock → process payment); sequence = messages between participants over time."],
+         ["Activity vs sequence", "Activity = workflow/process (check stock -> process payment); sequence = messages between participants over time."],
          ["Sequence vs communication", "Sequence emphasises time/order; communication emphasises objects and links."],
          ["Actor vs class", "An actor is external to the system (Student); a class is a type inside the model (StudentAccount)."]],
         widths=[0.3 * DOC_W, 0.7 * DOC_W]))
@@ -268,9 +268,9 @@ def story():
     s.append(CALLOUT("THE BIG PICTURE",
         ["A system is not just a collection of classes — it is a collection of behaviours performed by "
          "users and software objects working together to achieve goals. From “I need a registration "
-         "system”: <b>Who?</b> Student → <b>What goal?</b> Register Course → <b>What workflow?</b> "
-         "activity diagram → <b>Which objects interact?</b> sequence diagram → <b>How are they "
-         "connected?</b> communication diagram → <b>What does the complete requirement say?</b> full "
+         "system”: <b>Who?</b> Student -> <b>What goal?</b> Register Course -> <b>What workflow?</b> "
+         "activity diagram -> <b>Which objects interact?</b> sequence diagram -> <b>How are they "
+         "connected?</b> communication diagram -> <b>What does the complete requirement say?</b> full "
          "analysis documentation. The OMG UML 2.5.1 specification remains the key normative reference for "
          "these constructs."]))
 

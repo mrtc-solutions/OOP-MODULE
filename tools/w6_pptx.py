@@ -82,7 +82,7 @@ def slides(d):
 
     # 12. animal
     s = d.slide()
-    d.header(s, "An Inheritance Hierarchy", "Animal → Dog, Cat, Bird")
+    d.header(s, "An Inheritance Hierarchy", "Animal -> Dog, Cat, Bird")
     d.pic(s, "w6_animal.png", y=1.6, w=10.6)
     d.takeaway(s, "Each subclass adds its own behaviour — bark(), meow(), fly().")
 
@@ -96,7 +96,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Polymorphism — \u201cMany Forms\u201d", "The same request, different behaviour")
     d.pic(s, "w6_polymorphism.png", y=1.6, w=10.6)
-    d.takeaway(s, "makeSound() → bark / meow / moo — the object decides how to respond.")
+    d.takeaway(s, "makeSound() -> bark / meow / moo — the object decides how to respond.")
 
     # 15. payment polymorphism
     s = d.slide()
@@ -116,8 +116,8 @@ def slides(d):
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
         ("The general class defines ", "makeSound()."),
         ("Each subclass provides ", "a specialised version that overrides the inherited operation."),
-        ("Java: ", "Animal a = new Dog();  a.makeSound();  →  Bark"),
-        ("      ", "a = new Cat();  a.makeSound();  →  Meow"),
+        ("Java: ", "Animal a = new Dog();  a.makeSound();  ->  Bark"),
+        ("      ", "a = new Cat();  a.makeSound();  ->  Meow"),
         ("",""),
         ("In OOAD, ", "model the idea first — leave programming syntax for design."),
     ], size=17, gap=14)
@@ -133,17 +133,17 @@ def slides(d):
     s = d.slide()
     d.header(s, "Complete Example — Online Shopping", "All four concepts together")
     d.pic(s, "w6_online_shopping.png", y=1.6, w=10.6)
-    d.takeaway(s, "Composition (Order ◆ OrderItem) + inheritance (Payment) + polymorphism + grouping.")
+    d.takeaway(s, "Composition (Order *-- OrderItem) + inheritance (Payment) + polymorphism + grouping.")
 
     # 20. university example
     s = d.slide()
     d.header(s, "Complete Example — University System", "Building a larger model")
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
-        ("Inheritance: ", "User ▷ Student · User ▷ Lecturer."),
+        ("Inheritance: ", "User --|> Student · User --|> Lecturer."),
         ("Aggregation: ", "Department <>-- Lecturer."),
         ("Association: ", "Student — Registration — Course."),
-        ("Composition: ", "Course ◆-- CourseMaterial (strongly owned parts)."),
-        ("Polymorphism: ", "Assessment.calculateMark() → Assignment, Exam, Quiz, Project."),
+        ("Composition: ", "Course *-- CourseMaterial (strongly owned parts)."),
+        ("Polymorphism: ", "Assessment.calculateMark() -> Assignment, Exam, Quiz, Project."),
     ], size=17, gap=14)
     d.takeaway(s, "Choose the relationship that best represents the requirements — not every possible symbol.")
 
@@ -173,7 +173,7 @@ def slides(d):
 
     # 23. closing
     d.closing("REVISION & NEXT STEPS", [
-        "Draw Department <>-- Lecturer and Order ◆-- OrderLine — justify each choice.",
+        "Draw Department <>-- Lecturer and Order *-- OrderLine — justify each choice.",
         "Model the Payment hierarchy with processPayment(), then add a new payment type without breaking the design.",
         "Organise the university system into packages using your CASE tool.",
         "Next week: Dynamic Modelling — events, states, operations and concurrency.",

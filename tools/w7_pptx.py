@@ -54,7 +54,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "The Order Lifecycle", "An object changes state as events occur")
     d.pic(s, "w7_order_states.png", y=1.6, w=10.6)
-    d.takeaway(s, "Pending → Paid → Processing → Shipped → Delivered — read it as a story.")
+    d.takeaway(s, "Pending -> Paid -> Processing -> Shipped -> Delivered — read it as a story.")
 
     # 8. notation
     s = d.slide()
@@ -66,7 +66,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Guards", "Conditions on transitions")
     d.pic(s, "w7_guards.png", y=1.6, w=10.6)
-    d.takeaway(s, "[balance sufficient] → Cash Dispensed · [balance insufficient] → Insufficient Funds.")
+    d.takeaway(s, "[balance sufficient] -> Cash Dispensed · [balance insufficient] -> Insufficient Funds.")
 
     # 10. entry / exit / do
     s = d.slide()
@@ -78,7 +78,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "A Complete State Machine — Payment", "Read it as a story")
     d.pic(s, "w7_payment_states.png", y=1.6, w=10.6)
-    d.takeaway(s, "Pending → Processing → (success: Paid | failure: Failed).")
+    d.takeaway(s, "Pending -> Processing -> (success: Paid | failure: Failed).")
 
     # 12. operation vs event
     s = d.slide()
@@ -90,7 +90,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Operations Can Change State", "An ATM's operations move it between states")
     d.pic(s, "w7_operation_state_change.png", y=1.6, w=10.6)
-    d.takeaway(s, "insertCard(): Idle → Card Inserted · ejectCard(): Card Inserted → Idle.")
+    d.takeaway(s, "insertCard(): Idle -> Card Inserted · ejectCard(): Card Inserted -> Idle.")
 
     # 14. concurrency
     s = d.slide()
@@ -121,8 +121,8 @@ def slides(d):
     d.header(s, "Dynamic Models Reveal Problems", "Impossible transitions surface requirements gaps")
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
         ("A class diagram ", "shows Order with cancelOrder() — but when is it allowed?"),
-        ("The state machine ", "shows Delivered → Cancelled, which may not make business sense."),
-        ("Correct rule: ", "Pending/Paid/Processing → Cancelled; Shipped/Delivered → Return process."),
+        ("The state machine ", "shows Delivered -> Cancelled, which may not make business sense."),
+        ("Correct rule: ", "Pending/Paid/Processing -> Cancelled; Shipped/Delivered -> Return process."),
         ("",""),
         ("Modelling behaviour ", "exposes requirements problems before implementation."),
     ], size=17, gap=14)
@@ -132,7 +132,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Complete Example — Hospital Appointment", "A full state machine")
     d.pic(s, "w7_hospital.png", y=1.6, w=10.6)
-    d.takeaway(s, "Requested → Confirmed → Checked In → Waiting → With Doctor → Completed (or Cancelled).")
+    d.takeaway(s, "Requested -> Confirmed -> Checked In -> Waiting -> With Doctor -> Completed (or Cancelled).")
 
     # 20. state vs class vs object
     s = d.slide()
@@ -143,7 +143,7 @@ def slides(d):
         ("State ", "— the condition of that object: Paid."),
         ("Event ", "— something that happens: PaymentReceived."),
         ("",""),
-        ("Order #1001 → Paid · #1002 → Pending · #1003 → Shipped", "— same class, different states."),
+        ("Order #1001 -> Paid · #1002 -> Pending · #1003 -> Shipped", "— same class, different states."),
     ], size=17, gap=13)
     d.takeaway(s, "A state describes the current condition of an object during its lifecycle.")
 
@@ -157,7 +157,7 @@ def slides(d):
     ], size=16, gap=10)
     d.bullets(s, 6.9, 1.6, 5.4, 4.9, [
         ("State-machine thinking ", "— lifecycle of an object:"),
-        "Pending → (PaymentReceived) → Paid", "Paid → (Dispatched) → Shipped",
+        "Pending -> (PaymentReceived) -> Paid", "Paid -> (Dispatched) -> Shipped",
         "focuses on states + events", "",
     ], size=16, gap=10)
     d.takeaway(s, "A state machine is about an entity's states and event-driven transitions — not procedural steps.")
@@ -166,7 +166,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "The Traffic Light", "A simple state machine — and intersection concurrency")
     d.pic(s, "w7_traffic_light.png", y=1.6, w=10.6)
-    d.takeaway(s, "Red → Green → Yellow → Red; at an intersection, two controllers coordinate concurrently.")
+    d.takeaway(s, "Red -> Green -> Yellow -> Red; at an intersection, two controllers coordinate concurrently.")
 
     # 23. practical
     s = d.slide()
@@ -186,7 +186,7 @@ def slides(d):
         ("Event as a state ", "— PaymentReceived is an event, not [PaymentReceived]."),
         ("Operation as a state ", "— processPayment() is an operation, not [ProcessPayment]."),
         ("Forgetting the object ", "— whose state are we describing?"),
-        ("Impossible transitions ", "— Delivered → Paid may make no sense."),
+        ("Impossible transitions ", "— Delivered -> Paid may make no sense."),
         ("A state for every action ", "— \u201cClick Button\u201d is an event, not a state."),
     ], size=16, gap=12)
     d.takeaway(s, "If you cannot explain the diagram in words, you probably don't understand the model.")
@@ -203,7 +203,7 @@ def slides(d):
         ("Concurrency ", "— activities in parallel or overlapping."),
         ("Structure + dynamic ", "— together, a complete object-oriented model."),
     ], size=16, gap=12)
-    d.takeaway(s, "Object → state → event → transition → new state — the heart of dynamic modelling.")
+    d.takeaway(s, "Object -> state -> event -> transition -> new state — the heart of dynamic modelling.")
 
     # 26. closing
     d.closing("REVISION & NEXT STEPS", [

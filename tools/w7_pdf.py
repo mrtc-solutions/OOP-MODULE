@@ -75,8 +75,8 @@ def story():
     s.append(H1("5.  Events Are NOT States"))
     s += [P("This is a common student mistake. An <b>event</b> is something that happens — “Customer "
             "clicks Pay”. A <b>state</b> is a condition that exists for some period of time — “Payment "
-            "Pending”. So: event → something happens; state → something is/exists. An event can trigger a "
-            "<b>transition</b>: in <font name='Mono'>[Locked] —Correct PIN→ [Unlocked]</font>, Locked and "
+            "Pending”. So: event -> something happens; state -> something is/exists. An event can trigger a "
+            "<b>transition</b>: in <font name='Mono'>[Locked] —Correct PIN-> [Unlocked]</font>, Locked and "
             "Unlocked are states and “Correct PIN” is the event/trigger.")]
     s += FIG("w7_event_vs_state.png", "Figure 4 — Event vs state")
 
@@ -85,15 +85,15 @@ def story():
     s.append(H1("6.  States and the UML State Diagram"))
     s += [P("A <b>state</b> represents a condition or situation in which an object exists during some "
             "period of its behaviour. An Order can be Pending, Paid, Processing, Shipped, Delivered or "
-            "Cancelled. In a state-machine diagram, the <b>filled circle</b> (●) is the initial "
-            "pseudostate, the <b>bull's-eye</b> (◎) is the final state, rounded rectangles are states, "
+            "Cancelled. In a state-machine diagram, the <b>filled circle</b> is the initial "
+            "pseudostate, the <b>bull's-eye</b> is the final state, rounded rectangles are states, "
             "and labelled arrows are transitions carrying the trigger/event.")]
     s += FIG("w7_order_states.png", "Figure 5 — The Order lifecycle")
     s += FIG("w7_notation.png", "Figure 6 — State-machine notation")
 
     s.append(H1("7.  Transitions and Guards"))
     s += [P("A <b>transition</b> describes movement from a source state to a target state — "
-            "<font name='Mono'>Pending ──payment received──→ Paid</font>. Sometimes an event alone is not "
+            "<font name='Mono'>Pending ──payment received──-> Paid</font>. Sometimes an event alone is not "
             "enough: the system may need a <b>condition</b>. A <b>guard</b> is written in square "
             "brackets, e.g. <font name='Mono'>payment received [amount ≥ total]</font>, and means the "
             "transition can happen only if the condition is true. One state can have several possible "
@@ -132,7 +132,7 @@ def story():
             "rather than strictly one after another. After placing a food order, the restaurant prepares "
             "food <b>while</b> a driver is assigned <b>while</b> payment is processed — they need not "
             "happen in a strict sequence. <b>Sequential</b> behaviour runs one thing after another "
-            "(Enter PIN → Validate PIN → Display account); <b>concurrent</b> behaviour runs activities in "
+            "(Enter PIN -> Validate PIN -> Display account); <b>concurrent</b> behaviour runs activities in "
             "parallel (Order Placed splits into Process Payment and Prepare Order)."),
           P("A real-life example: when a passenger checks in at an airport, security screening and baggage "
             "processing can happen concurrently, then both complete before boarding. In UML, a composite "
@@ -193,10 +193,10 @@ def story():
     s += [P("<b>Class</b> is a blueprint/type (Order); <b>object</b> is a specific instance (order1024); "
             "<b>state</b> is the condition of that object (Paid); <b>event</b> is something that happens "
             "(PaymentReceived). Different objects of the same class can be in different states: Order "
-            "#1001 → Paid, #1002 → Pending, #1003 → Shipped. <b>A state describes the current condition "
+            "#1001 -> Paid, #1002 -> Pending, #1003 -> Shipped. <b>A state describes the current condition "
             "of an object during its lifecycle.</b>"),
           P("A state machine is <b>not</b> a flowchart: a flowchart represents procedural flow "
-            "(calculate total → check payment → print receipt), while a state machine focuses on the "
+            "(calculate total -> check payment -> print receipt), while a state machine focuses on the "
             "states of an entity and the transitions between them in response to events. Dynamic modelling "
             "is especially useful when an object has several meaningful states, changes state during its "
             "lifecycle, responds to events, has business rules governing transitions, or has concurrent "
@@ -228,13 +228,13 @@ def story():
     s.append(H1("17.  Common Student Mistakes"))
     mistakes = [
         ("Mistake 1 — Treating an event as a state.",
-         "“PaymentReceived” is an instantaneous event, not a state — model Pending ──PaymentReceived──→ Paid."),
+         "“PaymentReceived” is an instantaneous event, not a state — model Pending --PaymentReceived--> Paid."),
         ("Mistake 2 — Confusing an operation with a state.",
-         "processPayment() is an operation — model [Pending] ──processPayment()──→ [Processing]."),
+         "processPayment() is an operation — model [Pending] --processPayment()--> [Processing]."),
         ("Mistake 3 — Forgetting the object being modelled.",
          "A state machine should have a clear context (Order, Payment, ATM, StudentRegistration) — not a collection of random states."),
         ("Mistake 4 — Creating impossible transitions.",
-         "Delivered → Paid may make no sense — use domain requirements, not arbitrary arrows."),
+         "Delivered -> Paid may make no sense — use domain requirements, not arbitrary arrows."),
         ("Mistake 5 — A state for every small action.",
          "“Click Button” is normally an event; “Processing” is a meaningful state."),
     ]
@@ -248,16 +248,16 @@ def story():
         [["Dynamic modelling", "Behaviour/change over time", "Order lifecycle"],
          ["Event", "Something that happens", "Payment received"],
          ["State", "Condition of an object", "Paid"],
-         ["Transition", "Movement between states", "Pending → Paid"],
+         ["Transition", "Movement between states", "Pending -> Paid"],
          ["Guard", "Condition controlling a transition", "[payment valid]"],
          ["Operation", "Behaviour/service of an object", "cancelOrder()"],
-         ["Initial / final state", "Starting point / end point", "● / ◎"],
+         ["Initial / final state", "Starting point / end point", "filled circle / bull's-eye"],
          ["Entry / exit / do", "Behaviour on entering / leaving / within a state", "sendEmail()"],
          ["Concurrency", "Activities in parallel/overlapping", "Payment + preparation"],
          ["Structural / dynamic model", "What exists / what happens", "Classes / states"]],
         widths=[0.26 * DOC_W, 0.4 * DOC_W, 0.34 * DOC_W]))
     s.append(CALLOUT("THE MOST IMPORTANT PICTURE",
-        ["An object exists → it is in a state → an event occurs → a transition happens → the object "
+        ["An object exists -> it is in a state -> an event occurs -> a transition happens -> the object "
          "enters another state. That is the heart of dynamic modelling. Whenever you face a "
          "dynamic-modelling problem, ask four questions: <b>What object am I modelling? What states can "
          "it be in? What events cause it to change? What conditions determine which transition "

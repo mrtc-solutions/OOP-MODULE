@@ -26,7 +26,7 @@ def slides(d):
 
     # 3. progression
     s = d.slide()
-    d.header(s, "Week 15 → Week 16", "From application to independence")
+    d.header(s, "Week 15 -> Week 16", "From application to independence")
     d.pic(s, "w16_progression.png", y=1.6, w=10.6)
     d.takeaway(s, "Here is a real-world problem. Analyse it and design the system.")
 
@@ -100,7 +100,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Full Model Integration", "One requirement traced through every model")
     d.pic(s, "w16_integration_chain.png", y=1.5, w=10.4)
-    d.takeaway(s, "Requirement → Use Case → Classes → Sequence → State → Activity → Design.")
+    d.takeaway(s, "Requirement -> Use Case -> Classes -> Sequence -> State -> Activity -> Design.")
 
     # 16. consistency
     s = d.slide()
@@ -112,7 +112,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "The Unified Process — Four Phases", "Iterative and incremental")
     d.pic(s, "w16_usdp.png", y=1.6, w=10.6)
-    d.takeaway(s, "Inception → Elaboration → Construction → Transition.")
+    d.takeaway(s, "Inception -> Elaboration -> Construction -> Transition.")
 
     # 18. iterative
     s = d.slide()
@@ -134,7 +134,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Case Study: Mobile Money System", "Actors · inheritance · associations · send money")
     d.pic(s, "w16_mobile_money.png", y=1.5, w=10.4)
-    d.takeaway(s, "User ← Customer/Agent/Admin · Customer 1—1 Wallet · Wallet 1—0..* Transaction.")
+    d.takeaway(s, "User <- Customer/Agent/Admin · Customer 1—1 Wallet · Wallet 1—0..* Transaction.")
 
     # 21. practical challenge
     s = d.slide()
@@ -150,16 +150,16 @@ def slides(d):
     s = d.slide()
     d.header(s, "How to Approach an Exam Scenario", "Never start drawing immediately")
     d.pic(s, "w16_exam_approach.png", y=1.5, w=10.4)
-    d.takeaway(s, "Read twice → nouns → objects → actors → use cases → models → consistency.")
+    d.takeaway(s, "Read twice -> nouns -> objects -> actors -> use cases -> models -> consistency.")
 
     # 23. exam strategy
     s = d.slide()
     d.header(s, "Exam Answering Strategy", "Definition · Explain · Compare · UML")
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
         ("Define: ", "full definition, then an example."),
-        ("Explain: ", "Definition → Explanation → Example → Importance."),
+        ("Explain: ", "Definition -> Explanation -> Example -> Importance."),
         ("Compare: ", "use a table (class vs object: meaning, memory, example, quantity)."),
-        ("UML: ", "requirement → actors → use cases → classes → relationships → behaviour → consistency."),
+        ("UML: ", "requirement -> actors -> use cases -> classes -> relationships -> behaviour -> consistency."),
     ], size=15, gap=12)
     d.takeaway(s, "Examiners mark correct modelling, not artistic decoration.")
 
@@ -182,7 +182,7 @@ def slides(d):
         ("2. ", "Think systematically: identify what matters, how things interact and behave."),
         ("3. ", "Transform understanding into a coherent design developers can implement."),
     ], size=16, gap=14)
-    d.takeaway(s, "Business Problem → Requirements → … → Model Integration → Implementation.")
+    d.takeaway(s, "Business Problem -> Requirements -> … -> Model Integration -> Implementation.")
 
     # 26. closing
     d.closing("GOOD LUCK IN THE EXAMINATION", [

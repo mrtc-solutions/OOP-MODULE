@@ -113,7 +113,7 @@ def slides(d):
     s = d.slide()
     d.header(s, "Activity Diagram — Online Shopping", "A workflow with a decision")
     d.pic(s, "w8_activity_example.png", y=1.6, w=10.6)
-    d.takeaway(s, "After payment: [successful] → Create Order · [failed] → Show Error.")
+    d.takeaway(s, "After payment: [successful] -> Create Order · [failed] -> Show Error.")
 
     # 18. swimlanes
     s = d.slide()
@@ -123,18 +123,18 @@ def slides(d):
 
     # 19. models together
     s = d.slide()
-    d.header(s, "How the Models Work Together", "Requirement → design, with traceability")
+    d.header(s, "How the Models Work Together", "Requirement -> design, with traceability")
     d.pic(s, "w8_traceability.png", y=1.6, w=10.6)
-    d.takeaway(s, "Use case → activity → sequence → communication → analysis model → design.")
+    d.takeaway(s, "Use case -> activity -> sequence -> communication -> analysis model -> design.")
 
     # 20. full example
     s = d.slide()
     d.header(s, "A Full Example — Assignment Submission", "Four models, one requirement")
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
         ("Use case: ", "Submit Assignment (actor: Student)."),
-        ("Specification: ", "log in → open course → select assignment → upload → validate → submit → confirm."),
-        ("Activity: ", "Login → Open Course → Upload File → (valid? Submit : Show Error) → Confirm."),
-        ("Sequence: ", "Student → Web UI → Assignment Controller → Database."),
+        ("Specification: ", "log in -> open course -> select assignment -> upload -> validate -> submit -> confirm."),
+        ("Activity: ", "Login -> Open Course -> Upload File -> (valid? Submit : Show Error) -> Confirm."),
+        ("Sequence: ", "Student -> Web UI -> Assignment Controller -> Database."),
         ("Communication: ", "1: upload, 2: submit, 3: validate, 4: save, 5: confirmation."),
     ], size=16, gap=12)
     d.takeaway(s, "The same requirement described from different perspectives — that is behavioural analysis.")
@@ -145,7 +145,7 @@ def slides(d):
     d.bullets(s, 0.9, 1.6, 11.6, 4.9, [
         ("Contents: ", "problem statement, requirements, actors, use cases + specifications, activity, sequence, communication, class and state diagrams, assumptions, constraints, business rules, glossary."),
         ("Why it matters: ", "client, analyst, designer, programmer, tester and manager all need a common language."),
-        ("Traceability: ", "REQ-05 → UC-05 → activity model → sequence model → design → test cases."),
+        ("Traceability: ", "REQ-05 -> UC-05 -> activity model -> sequence model -> design -> test cases."),
     ], size=16, gap=14)
     d.takeaway(s, "Documentation creates traceability from requirement to test.")
 
@@ -168,7 +168,7 @@ def slides(d):
         ("1. Use case diagram ", "— boundary, 4+ actors, 8+ use cases, include/extend/generalisation."),
         ("2. Specification ", "— full document for Register Course."),
         ("3. Activity diagram ", "— decisions, alternatives, swimlanes."),
-        ("4. Sequence diagram ", "— 8+ messages: Student → UI → Controller → Database."),
+        ("4. Sequence diagram ", "— 8+ messages: Student -> UI -> Controller -> Database."),
         ("5. Communication diagram ", "— the same scenario, numbered messages."),
     ], size=16, gap=12)
     d.takeaway(s, "Then compare the sequence and communication diagrams — what changed in emphasis?")

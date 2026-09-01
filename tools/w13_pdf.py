@@ -57,7 +57,7 @@ def story():
             "its major parts, their responsibilities, relationships and interactions — the overall plan "
             "of the software. <b>Class design</b> asks what classes we need (Student, Course, "
             "Registration, Payment); <b>architecture</b> asks how they should be organised (Presentation "
-            "Layer → Registration Service → Registration Domain → Repository → Database). "
+            "Layer -> Registration Service -> Registration Domain -> Repository -> Database). "
             "<b>Architecture is broader than individual class design.</b>")]
     s += FIG("w13_architecture_vs_class.png", "Figure 2 — Architecture vs class design")
 
@@ -67,8 +67,8 @@ def story():
     s += [P("A <b>layer</b> is a logical grouping of related responsibilities — think of a school "
             "building: third floor administration, second floor classrooms, first floor library, ground "
             "floor reception. Software can be divided into layers in the same way. A common conceptual "
-            "structure is the <b>basic multilayer architecture</b>: <b>Presentation → Application/Service "
-            "→ Domain/Business → Data Access/Infrastructure → Database</b>. Understand every layer "
+            "structure is the <b>basic multilayer architecture</b>: <b>Presentation -> Application/Service "
+            "-> Domain/Business -> Data Access/Infrastructure -> Database</b>. Understand every layer "
             "rather than simply memorising the names.")]
     s += FIG("w13_layers.png", "Figure 3 — Basic multilayer architecture")
 
@@ -91,7 +91,7 @@ def story():
             "<font name='Mono'>registerStudent()</font>, <font name='Mono'>dropCourse()</font> and "
             "<font name='Mono'>getRegisteredCourses()</font>; it receives a request from the presentation "
             "layer and coordinates the necessary objects. When the student clicks <b>Register</b>: Web "
-            "Page → RegistrationController → RegistrationService → Course → Student → Registration. The "
+            "Page -> RegistrationController -> RegistrationService -> Course -> Student -> Registration. The "
             "UI does not need to know every internal detail.")]
 
     # PART E — domain layer ----------------------------------------------------------
@@ -113,7 +113,7 @@ def story():
             "<font name='Mono'>StudentRepository</font>, <font name='Mono'>CourseRepository</font>, "
             "<font name='Mono'>RegistrationRepository</font>. The service asks <i>“give me this "
             "student's registrations”</i> and the repository handles the mechanics. If every class "
-            "accessed the database directly (Student → Database, Course → Database, Payment → Database), "
+            "accessed the database directly (Student -> Database, Course -> Database, Payment -> Database), "
             "changing database technology would affect many classes; routing through repositories "
             "reduces direct dependencies.")]
     s += FIG("w13_data_access.png", "Figure 5 — The data access layer")
@@ -121,17 +121,17 @@ def story():
     # PART G — complete model -----------------------------------------------------------
     s.append(H1("PART G — THE COMPLETE MULTILAYER MODEL"))
     s += [P("The university registration example: <b>Presentation</b> (Web UI / Mobile UI / Desktop UI) "
-            "→ <b>Application</b> (RegistrationService, AuthenticationService, CourseService) → "
-            "<b>Domain</b> (Student, Course, Registration, Programme) → <b>Data Access</b> "
-            "(StudentRepository, CourseRepository, RegistrationRepository) → <b>Database</b>. This is the "
+            "-> <b>Application</b> (RegistrationService, AuthenticationService, CourseService) -> "
+            "<b>Domain</b> (Student, Course, Registration, Programme) -> <b>Data Access</b> "
+            "(StudentRepository, CourseRepository, RegistrationRepository) -> <b>Database</b>. This is the "
             "central example of the lecture.")]
 
     # PART H/I/J — separation, cohesion, coupling -----------------------------------------
     s.append(H1("PART H–J — SEPARATION OF CONCERNS, COHESION AND COUPLING"))
     s.append(H1("9.  Separation of Concerns"))
     s += [P("<b>Separation of concerns</b> means different parts of the system concentrate on different "
-            "responsibilities: Presentation → user interaction; Application → use-case coordination; "
-            "Domain → business rules; Data Access → persistence. A single "
+            "responsibilities: Presentation -> user interaction; Application -> use-case coordination; "
+            "Domain -> business rules; Data Access -> persistence. A single "
             "<font name='Mono'>StudentRegistration.java</font> containing displayHTML(), "
             "validatePassword(), connectDatabase(), calculateFees(), registerCourse(), sendEmail(), "
             "generatePDF() and checkPrerequisite() has too many responsibilities and becomes difficult to "
@@ -146,7 +146,7 @@ def story():
             "handling payroll, image editing, email and weather forecasting is not. A good class should "
             "have a clear reason for existing. <b>Coupling</b> describes how strongly one element depends "
             "on another — a web page that knows the database technology, table names and SQL is strongly "
-            "coupled; routing through RegistrationService → RegistrationRepository → Database provides a "
+            "coupled; routing through RegistrationService -> RegistrationRepository -> Database provides a "
             "cleaner separation. The principle: <b>aim for high cohesion and appropriately low "
             "coupling</b> — “keep related things together and unnecessary dependencies apart.”")]
     s += FIG("w13_cohesion.png", "Figure 7 — Cohesion")
@@ -211,8 +211,8 @@ def story():
     s.append(H1("16.  UML Component Diagrams"))
     s += [P("A <b>UML component diagram</b> shows the organisation and relationships of software "
             "components — OMG identifies it as one of UML's structural diagram types. A simplified "
-            "university example: Web Application → Authentication Component → Registration Component → "
-            "(Course Component, Notification Component) → Database Component. Students should learn to "
+            "university example: Web Application -> Authentication Component -> Registration Component -> "
+            "(Course Component, Notification Component) -> Database Component. Students should learn to "
             "represent the same idea using proper UML component notation in a CASE tool.")]
     s += FIG("w13_component_diagram.png", "Figure 13 — University component diagram")
 
@@ -223,7 +223,7 @@ def story():
             "that can contain or import model elements. A university system might group elements into "
             "Authentication, Academic, Registration, Finance, Notification and Reporting packages. "
             "<b>Package vs component:</b> a package primarily helps <b>organise</b> model elements "
-            "(Academic → Student, Course, Programme), while a component represents <b>modular "
+            "(Academic -> Student, Course, Programme), while a component represents <b>modular "
             "functionality</b> with interfaces (RegistrationComponent). They can be used together — a "
             "package is organisation/grouping; a component is modular functionality.")]
     s += FIG("w13_packages.png", "Figure 14 — Packages")
@@ -232,9 +232,9 @@ def story():
     s.append(H1("PART S &amp; T — DEPENDENCIES AND DEPENDENCY DIRECTION"))
     s.append(H1("18.  Dependencies"))
     s += [P("A <b>dependency</b> exists when one element relies on another — RegistrationService depends "
-            "on RegistrationRepository. Too many dependencies (A → B, C, D, E, F, G) means changing any "
+            "on RegistrationRepository. Too many dependencies (A -> B, C, D, E, F, G) means changing any "
             "of them may affect A. A simple architectural rule is that dependencies should move in a "
-            "<b>controlled direction</b>: Presentation → Application → Domain → Infrastructure — not "
+            "<b>controlled direction</b>: Presentation -> Application -> Domain -> Infrastructure — not "
             "every part depending on every other part.")]
     s += FIG("w13_dependency_direction.png", "Figure 15 — Dependency direction")
 
@@ -252,7 +252,7 @@ def story():
 
     s.append(H1("20.  Limitations — More Layers Is Not Always Better"))
     s += BUL([
-        "<b>Additional complexity</b> — Controller → Service → Domain → Repository → Database introduces abstractions.",
+        "<b>Additional complexity</b> — Controller -> Service -> Domain -> Repository -> Database introduces abstractions.",
         "<b>Performance overhead</b> — extra abstractions or network boundaries can cost time.",
         "<b>Overengineering</b> — a tiny app may not need 15 layers, 40 interfaces and 100 packages.",
         "<b>Incorrect layer responsibilities</b> — business logic scattered into controllers, repositories and UI looks layered but is poorly designed.",
@@ -286,7 +286,7 @@ def story():
     s.append(H1("23.  Logical vs Deployment Architecture"))
     s += [P("<b>Logical architecture</b> describes how software is organised; <b>deployment "
             "architecture</b> describes where software executes. Example: Student's Phone (Mobile "
-            "Application) → Internet → Application Server (Registration Service, Authentication) → "
+            "Application) -> Internet -> Application Server (Registration Service, Authentication) -> "
             "Database Server (University Database). A <b>UML deployment diagram</b> represents the "
             "runtime arrangement of software artifacts on nodes.")]
     s += FIG("w13_deployment.png", "Figure 18 — Deployment thinking")
@@ -308,9 +308,9 @@ def story():
 
     # tutorial / practical ---------------------------------------------------------------------------------------
     s.append(H1("25.  Tutorial and Practical"))
-    s += [P("<b>Tutorial 1</b> — classify each activity into a layer (Student clicks Register → "
-            "Presentation; RegistrationService → Application; Course business rule → Domain; "
-            "CourseRepository → Data Access; Database storage → Database; confirmation display → "
+    s += [P("<b>Tutorial 1</b> — classify each activity into a layer (Student clicks Register -> "
+            "Presentation; RegistrationService -> Application; Course business rule -> Domain; "
+            "CourseRepository -> Data Access; Database storage -> Database; confirmation display -> "
             "Presentation). <b>Tutorial 2</b> — critique a StudentController containing HTML, SQL, "
             "password validation, registration, email, fees and PDFs: what is wrong, is cohesion high or "
             "low, which responsibilities should move, propose a better architecture. <b>Tutorial 3</b> — "
