@@ -157,6 +157,16 @@ def build_week(week):
         print("     ", w14_pdf.build(w14_pdf.CFG, w14_pdf.story))
         print("     ", w14_pptx.build_pptx())
         print("     ", w14_docx.build(w14_docx.CFG, w14_docx.content))
+    elif week == 15:
+        print("[2/4] Week 15 visuals")
+        import week15_visuals
+        made = [fn() for fn in week15_visuals.ALL]
+        print(f"      generated {len(made)} visuals")
+        print("[3/4] Week 15 documents")
+        import w15_pdf, w15_pptx, w15_docx
+        print("     ", w15_pdf.build(w15_pdf.CFG, w15_pdf.story))
+        print("     ", w15_pptx.build_pptx())
+        print("     ", w15_docx.build(w15_docx.CFG, w15_docx.content))
     else:
         print(f"No content module yet for week {week}.")
         return
